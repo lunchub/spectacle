@@ -86,3 +86,6 @@ group :development, :test do
   gem 'thin'
   gem 'foreman'
 end
+
+# Graph
+gem 'gviz'

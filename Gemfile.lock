@@ -70,6 +70,8 @@ GEM
     foreman (0.63.0)
       dotenv (>= 0.7)
       thor (>= 0.13.6)
+    gviz (0.2.0)
+      thor
     haml (4.0.3)
       tilt
     haml-rails (0.4)
@@ -213,6 +215,7 @@ DEPENDENCIES
   coffee-rails (~> 4.0.0)
   draper
   foreman
+  gviz
   haml
   haml-rails
   jbuilder (~> 1.2)
