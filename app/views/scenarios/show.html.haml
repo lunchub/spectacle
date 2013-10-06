@@ -3,6 +3,8 @@
 %p
   %b Title:
   = @scenario.title
+%div
+  %object{data: @scenario.flowchart.image, type: "image/svg+xml"}
 
 = link_to 'Edit', edit_scenario_path(@scenario)
 \|
