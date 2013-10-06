@@ -1,4 +1,4 @@
-= form_for @scenario do |f|
+= semantic_form_for @scenario do |f|
   - if @scenario.errors.any?
     #error_explanation
       %h2= "#{pluralize(@scenario.errors.count, "error")} prohibited this scenario from being saved:"
@@ -9,5 +9,10 @@
   .field
     = f.label :title
     = f.text_field :title
+
+  .field
+    = f.semantic_fields_for :flowchart, @scenario.flowchart || Flowchart.new do |flowchart_f|
+      = flowchart_f.input :dot, as: :text
+      
   .actions
     = f.submit 'Save'

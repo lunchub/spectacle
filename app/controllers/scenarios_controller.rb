@@ -69,6 +69,6 @@ class ScenariosController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def scenario_params
-      params.require(:scenario).permit(:title)
+      params.require(:scenario).permit(:title, :flowchart_attributes => [:dot])
     end
 end
