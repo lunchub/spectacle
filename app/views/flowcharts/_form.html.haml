@@ -1,0 +1,13 @@
+= semantic_form_for @flowchart do |f|
+  - if @flowchart.errors.any?
+    #error_explanation
+      %h2= "#{pluralize(@flowchart.errors.count, "error")} prohibited this flowchart from being saved:"
+      %ul
+        - @flowchart.errors.full_messages.each do |msg|
+          %li= msg
+
+  %div
+    = f.input :dot, as: :text
+
+  .actions
+    = f.action :submit

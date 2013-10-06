@@ -1,0 +1,17 @@
+%h1 Listing flowcharts
+
+%table
+  %tr
+    %th
+    %th
+    %th
+
+  - @flowcharts.each do |flowchart|
+    %tr
+      %td= link_to 'Show', flowchart
+      %td= link_to 'Edit', edit_flowchart_path(flowchart)
+      %td= link_to 'Destroy', flowchart, :method => :delete, :data => { :confirm => 'Are you sure?' }
+
+%br
+
+= link_to 'New Flowchart', new_flowchart_path
