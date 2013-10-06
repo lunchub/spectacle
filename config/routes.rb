@@ -1,4 +1,6 @@
 Spectacle::Application.routes.draw do
+  resources :scenarios
+
   resources :flowcharts
 
   # The priority is based upon order of creation: first created -> highest priority.
