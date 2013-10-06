@@ -35,5 +35,8 @@ module Spectacle
       g.routing_specs false
       g.integration_tool false
     end
+
+    config.active_record.observers = [:flowchart_observer]
+
   end
 end
