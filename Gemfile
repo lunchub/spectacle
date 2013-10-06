@@ -92,3 +92,6 @@ end
 
 # Graph
 gem 'gviz'
+
+# Observer
+gem 'rails-observers'
