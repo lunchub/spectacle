@@ -48,6 +48,9 @@ end
 gem 'haml'
 gem 'haml-rails'
 
+# form
+gem 'formtastic'
+
 # decorator
 gem 'draper'
 
