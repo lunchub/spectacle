@@ -1,4 +1,6 @@
 class Flowchart < ActiveRecord::Base
+  belongs_to :scenario
+
   def build
     flowchart = self
     Graph do
