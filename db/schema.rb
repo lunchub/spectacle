@@ -11,13 +11,14 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20131006072505) do
+ActiveRecord::Schema.define(version: 20131006081506) do
 
   create_table "flowcharts", force: true do |t|
     t.datetime "created_at"
     t.datetime "updated_at"
     t.text     "dot"
     t.integer  "scenario_id"
+    t.string   "image"
   end
 
   create_table "scenarios", force: true do |t|
