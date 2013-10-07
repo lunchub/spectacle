@@ -70,8 +70,6 @@ GEM
     foreman (0.63.0)
       dotenv (>= 0.7)
       thor (>= 0.13.6)
-    formtastic (2.2.1)
-      actionpack (>= 3.0)
     gviz (0.2.0)
       thor
     haml (4.0.3)
@@ -170,6 +168,9 @@ GEM
       sprockets-rails (~> 2.0.0)
     sextant (0.2.4)
       rails (>= 3.2)
+    simple_form (3.0.0)
+      actionpack (>= 4.0.0, < 4.1)
+      activemodel (>= 4.0.0, < 4.1)
     slop (3.4.6)
     spork (0.9.2)
     sprockets (2.10.0)
@@ -213,7 +214,6 @@ DEPENDENCIES
   coffee-rails (~> 4.0.0)
   draper
   foreman
-  formtastic
   gviz
   haml
   haml-rails
@@ -233,6 +233,7 @@ DEPENDENCIES
   rspec-rails
   sass-rails (~> 4.0.0)
   sextant
+  simple_form
   spork
   sqlite3
   thin

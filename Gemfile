@@ -44,7 +44,7 @@ gem 'haml'
 gem 'haml-rails'
 
 # form
-gem 'formtastic'
+gem 'simple_form'
 
 # decorator
 gem 'draper'
