@@ -1,4 +1,6 @@
 Spectacle::Application.routes.draw do
+  resources :pages
+
   resources :questions
 
   resources :scenarios
