@@ -5,14 +5,12 @@
     %th title
     %th
     %th
-    %th
 
   - @scenarios.each do |scenario|
     %tr
       %td= scenario.title
       %td= link_to 'Show', scenario
       %td= link_to 'Edit', edit_scenario_path(scenario)
-      %td= link_to 'Destroy', scenario, :method => :delete, :data => { :confirm => 'Are you sure?' }
 
 %br
 
