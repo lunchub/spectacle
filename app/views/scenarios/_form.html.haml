@@ -8,11 +8,11 @@
 
   .field
     = f.label :title
-    = f.text_field :title
+    = f.text_field :title, style: "width: 800px"
 
   .field
     = f.semantic_fields_for :flowchart, @scenario.flowchart || Flowchart.new do |flowchart_f|
-      = flowchart_f.input :dot, as: :text
+      = flowchart_f.input :dot, as: :text, input_html: {style: "width: 800px; height: 1000px; font-size: 1em;"}
       
   .actions
     = f.submit 'Save'

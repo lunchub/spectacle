@@ -3,9 +3,16 @@
 %p
   %b Title:
   = @scenario.title
-%div
-  %object{data: @scenario.flowchart.image, type: "image/svg+xml"}
+%div{class: "parent", style: "width: 900px; height: 900px; cursor: move; border: 1px solid; position: relative; overflow: hidden;"}
+  %div{class: "panzoom"}
+    -# %object{data: @scenario.flowchart.image, type: "image/svg+xml", style: "width: 1000px; height: 1000px; border: 1px solid;"}
+    = image_tag @scenario.flowchart.image, width: 900, height: 900
+    -# %input{type: "hidden", value: "#{@scenario.flowchart.image}"}
 
 = link_to 'Edit', edit_scenario_path(@scenario)
 \|
 = link_to 'Back', scenarios_path
+
+<script src="http://d3js.org/d3.v3.min.js" charset="utf-8"></script>
+= javascript_include_tag "scenario/jquery.panzoom.min"
+= javascript_include_tag "scenario/svg"
