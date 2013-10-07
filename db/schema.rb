@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20131007015500) do
+ActiveRecord::Schema.define(version: 20131007041509) do
 
   create_table "flowcharts", force: true do |t|
     t.datetime "created_at"
@@ -44,6 +44,11 @@ ActiveRecord::Schema.define(version: 20131007015500) do
     t.string   "title"
     t.datetime "created_at"
     t.datetime "updated_at"
+  end
+
+  create_table "scenarios_pages", id: false, force: true do |t|
+    t.integer "scenario_id"
+    t.integer "page_id"
   end
 
 end
