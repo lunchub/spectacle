@@ -2,16 +2,16 @@
 
 = link_to 'New Scenario', new_scenario_path
 
-%table{id: 'scenarios_list'}
-  %tr
-    %th title
-    %th
-    %th
+%table#scenarios_list.pure-table.pure-table-bordered
+  %thead
+    %tr
+      %th title
+      %th
 
+  %tbody
   - @scenarios.each do |scenario|
     %tr
-      %td= scenario.title
-      %td= link_to 'Show', scenario
+      %td= link_to scenario.title, scenario
       %td= link_to 'Edit', edit_scenario_path(scenario)
 
 

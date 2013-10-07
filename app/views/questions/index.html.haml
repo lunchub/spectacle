@@ -2,13 +2,15 @@
 
 = link_to 'New Question', new_question_path
 
-%table
-  %tr
-    %th Title
-    %th
-    %th
-    %th
+%table.pure-table.pure-table-bordered
+  %thead
+    %tr
+      %th Title
+      %th
+      %th
+      %th
 
+  %tbody
   - @questions.each do |question|
     %tr
       %td= question.title
