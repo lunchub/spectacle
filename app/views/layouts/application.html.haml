@@ -6,4 +6,16 @@
     = javascript_include_tag "application", "data-turbolinks-track" => true
     = csrf_meta_tags
   %body
+    .pure-menu.pure-menu-open.pure-menu-horizontal
+      %ul
+        %li
+          = link_to 'Home', root_path
+        %li
+          = link_to 'Scenarios', scenarios_path
+        %li
+          = link_to 'Questions', questions_path
+        %li
+          = link_to 'Pages', pages_path
+        %li
+          = link_to 'PageActions', page_actions_path
     = yield
