@@ -1,4 +1,6 @@
 Spectacle::Application.routes.draw do
+  resources :questions
+
   resources :scenarios
 
   resources :flowcharts
