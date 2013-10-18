@@ -16,5 +16,6 @@
 /tmp
 /vendor/bundle
 bin/
+tags
 
 public/flowcharts/*
