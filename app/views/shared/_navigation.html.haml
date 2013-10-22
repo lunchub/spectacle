@@ -1,0 +1,18 @@
+%div.navbar.headnav
+  = link_to '#', class: 'toggle', 'gumby-trigger' => '.headnav > ul' do
+    %i.icon-menu
+
+  -# %h1.four.columns.logo
+  -#   = link_to 'Home', root_path
+
+  %ul.eight.columns
+    %li
+      = link_to 'Home', root_path
+    %li
+      = link_to 'Pages', pages_path
+    -# %li
+    -#   = link_to 'Scenarios', scenarios_path
+    -# %li
+    -#   = link_to 'Questions', questions_path
+    -# %li
+    -#   = link_to 'PageActions', page_actions_path
