@@ -1,0 +1,19 @@
+%h1 Listing page_specs
+
+%table
+  %tr
+    %th Title
+    %th
+    %th
+    %th
+
+  - @page_specs.each do |page_spec|
+    %tr
+      %td= page_spec.title
+      %td= link_to 'Show', page_spec
+      %td= link_to 'Edit', edit_page_spec_path(page_spec)
+      %td= link_to 'Destroy', page_spec, :method => :delete, :data => { :confirm => 'Are you sure?' }
+
+%br
+
+= link_to 'New Page spec', new_page_spec_path

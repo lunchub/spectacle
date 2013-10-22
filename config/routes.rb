@@ -1,4 +1,6 @@
 Spectacle::Application.routes.draw do
+  resources :page_specs
+
   resources :page_preconditions
 
   resources :page_goals

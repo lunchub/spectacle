@@ -1,0 +1,9 @@
+%p#notice= notice
+
+%p
+  %b Title:
+  = @page_spec.title
+
+= link_to 'Edit', edit_page_spec_path(@page_spec)
+\|
+= link_to 'Back', page_specs_path
