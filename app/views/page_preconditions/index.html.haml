@@ -1,0 +1,19 @@
+%h1 Listing page_preconditions
+
+%table
+  %tr
+    %th Title
+    %th
+    %th
+    %th
+
+  - @page_preconditions.each do |page_precondition|
+    %tr
+      %td= page_precondition.title
+      %td= link_to 'Show', page_precondition
+      %td= link_to 'Edit', edit_page_precondition_path(page_precondition)
+      %td= link_to 'Destroy', page_precondition, :method => :delete, :data => { :confirm => 'Are you sure?' }
+
+%br
+
+= link_to 'New Page precondition', new_page_precondition_path
