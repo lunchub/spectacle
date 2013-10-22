@@ -1,7 +1,5 @@
-= simple_form_for @question, html: {class: 'pure-form pure-form-aligned' } do |f|
+= simple_form_for @question, html: {class: '' } do |f|
   %fieldset
-    .pure-control-group
-      = f.label :title
-      = f.text_field :title
-    .pure-controls
-      = f.submit 'Save', class: 'pure-button pure-button-primary'
+    = f.label :title
+    = f.text_field :title
+    = f.submit 'Save', class: ''

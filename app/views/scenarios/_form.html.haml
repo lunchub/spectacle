@@ -1,12 +1,9 @@
-= simple_form_for @scenario, html: {class: 'pure-form pure-form-aligned' } do |f|
+= simple_form_for @scenario, html: {class: '' } do |f|
   %fieldset
-    .pure-control-group
-      = f.label :title
-      = f.text_field :title, style: "width: 800px"
+    = f.label :title
+    = f.text_field :title, style: "width: 800px"
 
-    .pure-control-group
-      = f.simple_fields_for :flowchart, @scenario.flowchart || Flowchart.new do |flowchart_f|
-        = flowchart_f.input :dot, as: :text, label: :dot, input_html: {style: "width: 800px; height: 1000px; font-size: 1em;"}
-        
-    .pure-controls
-      = f.submit 'Save', class: 'pure-button pure-button-primary'
+    = f.simple_fields_for :flowchart, @scenario.flowchart || Flowchart.new do |flowchart_f|
+      = flowchart_f.input :dot, as: :text, label: :dot, input_html: {style: "width: 800px; height: 1000px; font-size: 1em;"}
+      
+    = f.submit 'Save', class: ''
