@@ -1,0 +1,23 @@
+%h1 Listing page_links
+
+%table
+  %tr
+    %th Element name
+    %th Page name
+    %th Url
+    %th
+    %th
+    %th
+
+  - @page_links.each do |page_link|
+    %tr
+      %td= page_link.element_name
+      %td= page_link.page_name
+      %td= page_link.url
+      %td= link_to 'Show', page_link
+      %td= link_to 'Edit', edit_page_link_path(page_link)
+      %td= link_to 'Destroy', page_link, :method => :delete, :data => { :confirm => 'Are you sure?' }
+
+%br
+
+= link_to 'New Page link', new_page_link_path

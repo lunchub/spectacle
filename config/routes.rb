@@ -1,4 +1,6 @@
 Spectacle::Application.routes.draw do
+  resources :page_links
+
   resources :site_options
 
   get "index/index"

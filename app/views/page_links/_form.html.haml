@@ -1,0 +1,10 @@
+= simple_form_for(@page_link) do |f|
+  = f.error_notification
+
+  .form-inputs
+    = f.input :element_name
+    = f.input :page_name
+    = f.input :url
+
+  .form-actions
+    = f.button :submit

@@ -1,0 +1,15 @@
+%p#notice= notice
+
+%p
+  %b Element name:
+  = @page_link.element_name
+%p
+  %b Page name:
+  = @page_link.page_name
+%p
+  %b Url:
+  = @page_link.url
+
+= link_to 'Edit', edit_page_link_path(@page_link)
+\|
+= link_to 'Back', page_links_path
