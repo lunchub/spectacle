@@ -1,0 +1,19 @@
+%h1 Listing site_options
+
+%table
+  %tr
+    %th Name
+    %th
+    %th
+    %th
+
+  - @site_options.each do |site_option|
+    %tr
+      %td= site_option.name
+      %td= link_to 'Show', site_option
+      %td= link_to 'Edit', edit_site_option_path(site_option)
+      %td= link_to 'Destroy', site_option, :method => :delete, :data => { :confirm => 'Are you sure?' }
+
+%br
+
+= link_to 'New Site option', new_site_option_path
