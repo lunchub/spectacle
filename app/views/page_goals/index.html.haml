@@ -1,0 +1,19 @@
+%h1 Listing page_goals
+
+%table
+  %tr
+    %th Title
+    %th
+    %th
+    %th
+
+  - @page_goals.each do |page_goal|
+    %tr
+      %td= page_goal.title
+      %td= link_to 'Show', page_goal
+      %td= link_to 'Edit', edit_page_goal_path(page_goal)
+      %td= link_to 'Destroy', page_goal, :method => :delete, :data => { :confirm => 'Are you sure?' }
+
+%br
+
+= link_to 'New Page goal', new_page_goal_path

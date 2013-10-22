@@ -1,4 +1,6 @@
 Spectacle::Application.routes.draw do
+  resources :page_goals
+
   resources :mail_deliveries
 
   resources :page_links
