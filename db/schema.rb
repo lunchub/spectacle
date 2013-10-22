@@ -31,6 +31,7 @@ ActiveRecord::Schema.define(version: 20131022132655) do
     t.string   "element_name"
     t.string   "page_name"
     t.string   "url"
+    t.integer  "page_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -61,6 +62,7 @@ ActiveRecord::Schema.define(version: 20131022132655) do
 
   create_table "site_options", force: true do |t|
     t.string   "name"
+    t.integer  "page_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

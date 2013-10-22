@@ -3,6 +3,8 @@ class CreateSiteOptions < ActiveRecord::Migration
     create_table :site_options do |t|
       t.string :name
 
+      t.references :page
+
       t.timestamps
     end
   end

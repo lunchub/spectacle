@@ -5,6 +5,8 @@ class CreatePageLinks < ActiveRecord::Migration
       t.string :page_name
       t.string :url
 
+      t.references :page
+
       t.timestamps
     end
   end
