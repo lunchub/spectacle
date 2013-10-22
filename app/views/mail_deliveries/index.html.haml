@@ -1,0 +1,19 @@
+%h1 Listing mail_deliveries
+
+%table
+  %tr
+    %th Name
+    %th
+    %th
+    %th
+
+  - @mail_deliveries.each do |mail_delivery|
+    %tr
+      %td= mail_delivery.name
+      %td= link_to 'Show', mail_delivery
+      %td= link_to 'Edit', edit_mail_delivery_path(mail_delivery)
+      %td= link_to 'Destroy', mail_delivery, :method => :delete, :data => { :confirm => 'Are you sure?' }
+
+%br
+
+= link_to 'New Mail delivery', new_mail_delivery_path
