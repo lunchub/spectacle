@@ -2,10 +2,11 @@ class Page < ActiveRecord::Base
   # has_and_belongs_to_many :scenario
 
   has_many :page_goals, dependent: :destroy
-  accepts_nested_attributes_for :page_goals, allow_destroy: true
+  accepts_nested_attributes_for :page_goals, reject_if: :all_blank, allow_destroy: true
 
-  has_many :site_options, dependent: :destroy
-  accepts_nested_attributes_for :site_options, allow_destroy: true
+  has_many :page_site_options
+  has_many :site_options, through: :page_site_options
+  accepts_nested_attributes_for :page_site_options, reject_if: proc { |attributes| attributes['site_option_id'].blank? } , allow_destroy: true
 
   has_many :mail_deliveries, dependent: :destroy
   accepts_nested_attributes_for :mail_deliveries, allow_destroy: true
