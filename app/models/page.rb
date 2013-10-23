@@ -6,29 +6,29 @@ class Page < ActiveRecord::Base
 
   has_many :page_site_options
   has_many :site_options, through: :page_site_options
-  accepts_nested_attributes_for :page_site_options, reject_if: proc { |attributes| attributes['site_option_id'].blank? } , allow_destroy: true
+  accepts_nested_attributes_for :page_site_options, reject_if: :all_blank, allow_destroy: true
 
   has_many :page_mail_deliveries
   has_many :mail_deliveries, through: :page_mail_deliveries
   accepts_nested_attributes_for :page_mail_deliveries, reject_if: :all_blank, allow_destroy: true
 
   has_many :page_preconditions, dependent: :destroy
-  accepts_nested_attributes_for :page_preconditions, allow_destroy: true
+  accepts_nested_attributes_for :page_preconditions, reject_if: :all_blank, allow_destroy: true
 
   has_many :page_specs, dependent: :destroy
-  accepts_nested_attributes_for :page_specs, allow_destroy: true
+  accepts_nested_attributes_for :page_specs, reject_if: :all_blank, allow_destroy: true
 
   has_many :page_actions, dependent: :destroy
-  accepts_nested_attributes_for :page_actions, allow_destroy: true
+  accepts_nested_attributes_for :page_actions, reject_if: :all_blank, allow_destroy: true
 
   has_many :page_links, dependent: :destroy
   accepts_nested_attributes_for :page_links, allow_destroy: true
 
   has_many :questions, as: :questionable, dependent: :destroy
-  accepts_nested_attributes_for :questions, allow_destroy: true
+  accepts_nested_attributes_for :questions, reject_if: :all_blank, allow_destroy: true
 
   has_many :page_images, dependent: :destroy
-  accepts_nested_attributes_for :page_images, allow_destroy: true
+  accepts_nested_attributes_for :page_images, reject_if: :all_blank, allow_destroy: true
 
 
   validates :title, presence: true
