@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20131023095513) do
+ActiveRecord::Schema.define(version: 20131023115742) do
 
   create_table "answers", force: true do |t|
     t.text     "comment"
@@ -64,6 +64,16 @@ ActiveRecord::Schema.define(version: 20131023095513) do
     t.datetime "created_at"
     t.datetime "updated_at"
   end
+
+  create_table "page_mail_deliveries", force: true do |t|
+    t.integer  "page_id"
+    t.integer  "mail_delivery_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "page_mail_deliveries", ["mail_delivery_id"], name: "index_page_mail_deliveries_on_mail_delivery_id"
+  add_index "page_mail_deliveries", ["page_id"], name: "index_page_mail_deliveries_on_page_id"
 
   create_table "page_preconditions", force: true do |t|
     t.string   "title"
