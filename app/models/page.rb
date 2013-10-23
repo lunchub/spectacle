@@ -29,6 +29,14 @@ class Page < ActiveRecord::Base
   has_many :mail_deliveries, through: :page_mail_deliveries
   accepts_nested_attributes_for :page_mail_deliveries, reject_if: :all_blank, allow_destroy: true
 
+  # 自己参照 N:N
+  has_many :from_page_relations, foreign_key: 'from_page_id', class_name: 'PageLink'
+  has_many :to_page_relations, foreign_key: 'to_page_id', class_name: 'PageLink'
+  has_many :from_pages, through: 'from_page_relations', class_name: 'PageLink', source: 'to_page'
+  has_many :to_pages, through: 'to_page_relations', class_name: 'PageLink', source: 'from_page'
+  accepts_nested_attributes_for :from_pages, reject_if: :all_blank, allow_destroy: true
+  accepts_nested_attributes_for :to_pages, reject_if: :all_blank, allow_destroy: true
+
 
   validates :title, presence: true
 
