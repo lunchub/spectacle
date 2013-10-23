@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20131023040955) do
+ActiveRecord::Schema.define(version: 20131023095513) do
 
   create_table "answers", force: true do |t|
     t.text     "comment"
@@ -72,6 +72,16 @@ ActiveRecord::Schema.define(version: 20131023040955) do
     t.datetime "updated_at"
   end
 
+  create_table "page_site_options", force: true do |t|
+    t.integer  "page_id"
+    t.integer  "site_option_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "page_site_options", ["page_id"], name: "index_page_site_options_on_page_id"
+  add_index "page_site_options", ["site_option_id"], name: "index_page_site_options_on_site_option_id"
+
   create_table "page_specs", force: true do |t|
     t.string   "title"
     t.integer  "page_id"
@@ -110,6 +120,7 @@ ActiveRecord::Schema.define(version: 20131023040955) do
     t.integer  "page_id"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.text     "description"
   end
 
 end
