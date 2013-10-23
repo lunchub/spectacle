@@ -1,12 +1,95 @@
-%p#notice= notice
+%div.row
 
-%p
-  %b Title:
-  = @page.title
-%p
-  %b Url:
-  = @page.url
+  %div.twelve.columns
+    %div.secondary.xlarge.btn
+      = link_to 'LIST', pages_path
+    %div.primary.xlarge.btn.pull_right
+      = link_to 'EDIT', edit_page_path
 
-= link_to 'Edit', edit_page_path(@page)
-\|
-= link_to 'Back', pages_path
+%div.row
+
+  %div.six.columns
+
+  %div.six.columns
+
+
+    %h3 基本情報
+
+    %table
+      %thead
+        %tr
+          %th ページ名称
+          %th URL
+          %th オプション
+          %th メール配信
+      %tbody
+        %tr
+          %td
+          %td
+          %td
+          %td
+
+    %h4 ページ目標
+    %ul
+      %li
+
+    %h4 オプション詳細
+    %ul
+      %li
+
+    %h4 メール配信詳細
+    %ul
+      %li
+
+
+    %h3 前提条件
+    %ul
+      %li
+
+    %h3 仕様
+    %ul
+      %li
+
+    %h4 画面上の挙動
+    %ul
+      %li
+
+    %h4 フォームとバリデーション
+    
+    %table
+      %thead
+        %tr
+          %th 表示上の名目
+          %th システム上の名目
+          %th フォーム部品の種別
+          %th バリデーション内容
+      %tbody
+        %tr
+          %td
+          %td
+          %td
+          %td
+
+
+    %h3 遷移
+
+    %table
+      %thead
+        %tr
+          %th 表示要素
+          %th 遷移先ページ
+          %th URL
+      %tbody
+        %tr
+          %td
+          %td
+          %td
+
+
+    %h3 業態間における備考
+
+
+    %h3 WEB版との比較事項
+
+
+    %h3 疑問点

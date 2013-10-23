@@ -1,16 +1,41 @@
-= form_for @page do |f|
-  - if @page.errors.any?
-    #error_explanation
-      %h2= "#{pluralize(@page.errors.count, "error")} prohibited this page from being saved:"
-      %ul
-        - @page.errors.full_messages.each do |msg|
-          %li= msg
+= simple_form_for @page do |f|
 
-  .field
-    = f.label :title
-    = f.text_field :title
-  .field
-    = f.label :url
-    = f.text_field :url
-  .actions
-    = f.submit 'Save'
+  %div.row
+    %div.twelve.columns
+    - if @page.errors.any?
+      #error_explanation
+        %h3= "#{pluralize(@page.errors.count, "error")} prohibited this page from being saved:"
+        %ul
+          - @page.errors.full_messages.each do |msg|
+            %li= msg
+
+  %div.row
+
+    %div.twelve.columns
+      %div.warning.xlarge.btn
+        = link_to 'Cancel', pages_path
+      - unless @page.new_record?
+        %div.secondary.xlarge.btn
+          = link_to 'Show', page_path
+      %div.primary.xlarge.btn.pull_right
+        = f.submit 'Save'
+
+  %div.row
+
+    %div.six.columns
+      = render 'form_images', :f => f
+
+    %div.six.columns
+      
+      %section.tabs
+        %ul.tab-nav
+          %li.active
+            = link_to '機能仕様書', '#'
+          %li
+            = link_to 'デザイン指示書', '#'
+
+      %div.tab-content.active
+        = render 'form_system', :f => f
+
+      %div.tab-content
+        = render 'form_design', :f => f
