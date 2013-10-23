@@ -49,6 +49,9 @@ gem 'simple_form'
 # decorator
 gem 'draper'
 
+# uploader
+gem 'carrierwave'
+
 # quiet_assets
 group :development, :test do
   gem 'quiet_assets'
