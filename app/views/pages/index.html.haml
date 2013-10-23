@@ -1,21 +1,24 @@
-%h1 Listing pages
+%div.twelve.columns
 
-%table
-  %tr
-    %th Title
-    %th Url
-    %th
-    %th
-    %th
+  %p.large.btn.secondary
+    = link_to 'New Page', new_page_path
 
-  - @pages.each do |page|
-    %tr
-      %td= page.title
-      %td= page.url
-      %td= link_to 'Show', page
-      %td= link_to 'Edit', edit_page_path(page)
-      %td= link_to 'Destroy', page, :method => :delete, :data => { :confirm => 'Are you sure?' }
+  %table.striped
+    %thead
+      %tr
+        %th Title
+        %th Url
+        %th
+        %th
+        %th
 
-%br
+    %tbody
+    - @pages.each do |page|
+      %tr
+        %td= page.title
+        %td= page.url
+        %td= link_to 'Show', page
+        %td= link_to 'Edit', edit_page_path(page)
+        %td= link_to 'Destroy', page, :method => :delete, :data => { :confirm => 'Are you sure?' }
 
-= link_to 'New Page', new_page_path
+
