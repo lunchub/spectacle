@@ -14,4 +14,6 @@ class Page < ActiveRecord::Base
   has_many :page_links, dependent: :destroy
 
   has_many :questions, as: :questionable, dependent: :destroy
+
+  has_many :page_images, dependent: :destroy
 end
