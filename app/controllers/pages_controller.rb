@@ -83,6 +83,12 @@ class PagesController < ApplicationController
           :site_option_id, 
           :_destroy, 
         ], 
+        page_mail_deliveries_attributes: [
+          :id, 
+          :page_id, 
+          :mail_delivery_id, 
+          :_destroy, 
+        ], 
       )
     end
 end
