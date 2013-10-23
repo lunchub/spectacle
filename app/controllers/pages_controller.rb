@@ -94,6 +94,16 @@ class PagesController < ApplicationController
           :title, 
           :_destroy, 
         ], 
+        page_specs_attributes: [
+          :id, 
+          :title, 
+          :_destroy, 
+        ], 
+        page_actions_attributes: [
+          :id, 
+          :title, 
+          :_destroy, 
+        ], 
       )
     end
 end
