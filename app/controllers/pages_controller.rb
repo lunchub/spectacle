@@ -89,6 +89,11 @@ class PagesController < ApplicationController
           :mail_delivery_id, 
           :_destroy, 
         ], 
+        page_preconditions_attributes: [
+          :id, 
+          :title, 
+          :_destroy, 
+        ], 
       )
     end
 end
