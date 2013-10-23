@@ -1,0 +1,9 @@
+%p#notice= notice
+
+%p
+  %b Name:
+  = @page_image.name
+
+= link_to 'Edit', edit_page_image_path(@page_image)
+\|
+= link_to 'Back', page_images_path

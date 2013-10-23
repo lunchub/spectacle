@@ -1,0 +1,19 @@
+%h1 Listing page_images
+
+%table
+  %tr
+    %th Name
+    %th
+    %th
+    %th
+
+  - @page_images.each do |page_image|
+    %tr
+      %td= page_image.name
+      %td= link_to 'Show', page_image
+      %td= link_to 'Edit', edit_page_image_path(page_image)
+      %td= link_to 'Destroy', page_image, :method => :delete, :data => { :confirm => 'Are you sure?' }
+
+%br
+
+= link_to 'New Page image', new_page_image_path

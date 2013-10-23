@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20131023040009) do
+ActiveRecord::Schema.define(version: 20131023040955) do
 
   create_table "answers", force: true do |t|
     t.text     "comment"
@@ -43,6 +43,14 @@ ActiveRecord::Schema.define(version: 20131023040009) do
 
   create_table "page_goals", force: true do |t|
     t.string   "title"
+    t.integer  "page_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "page_images", force: true do |t|
+    t.string   "name"
+    t.string   "image"
     t.integer  "page_id"
     t.datetime "created_at"
     t.datetime "updated_at"
