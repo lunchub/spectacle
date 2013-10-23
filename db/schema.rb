@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20131023115742) do
+ActiveRecord::Schema.define(version: 20131023125148) do
 
   create_table "answers", force: true do |t|
     t.text     "comment"
@@ -39,7 +39,10 @@ ActiveRecord::Schema.define(version: 20131023115742) do
     t.string   "title"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "page_id"
   end
+
+  add_index "page_actions", ["page_id"], name: "index_page_actions_on_page_id"
 
   create_table "page_goals", force: true do |t|
     t.string   "title"
