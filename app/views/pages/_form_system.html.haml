@@ -35,6 +35,10 @@
   %legend 前提条件
 
   %ul
+    = f.simple_fields_for :page_preconditions do |page_precondition_form|
+      = render 'page_precondition_fields', f: page_precondition_form
+    %li
+      = link_to_add_association '前提条件を追加', f, :page_preconditions
 
 %fieldset
   %legend 仕様
