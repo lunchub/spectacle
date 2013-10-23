@@ -43,10 +43,19 @@
 %fieldset
   %legend 仕様
 
+  %h4 仕様
   %ul
+    = f.simple_fields_for :page_specs do |page_spec_form|
+      = render 'page_spec_fields', f: page_spec_form
+    %li
+      = link_to_add_association '仕様を追加', f, :page_specs
 
   %h4 画面上の挙動
   %ul
+    = f.simple_fields_for :page_actions do |page_action_form|
+      = render 'page_action_fields', f: page_action_form
+    %li
+      = link_to_add_association '画面上の挙動を追加', f, :page_actions
 
   %h4 フォームとバリデーション
 
