@@ -45,6 +45,7 @@ gem 'haml-rails'
 
 # form
 gem 'simple_form'
+gem 'cocoon'
 
 # decorator
 gem 'draper'
