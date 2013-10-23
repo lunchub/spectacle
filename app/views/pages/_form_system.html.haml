@@ -26,23 +26,23 @@
 
   %h4 メール配信
   %ul
-    %li.field
+    = f.simple_fields_for :page_mail_deliveries do |page_mail_delivery_form|
+      = render 'page_mail_delivery_fields', f: page_mail_delivery_form
+    %li
+      = link_to_add_association '関連するメール配信を追加', f, :page_mail_deliveries
 
 %fieldset
   %legend 前提条件
 
   %ul
-    %li.field
 
 %fieldset
   %legend 仕様
 
   %ul
-    %li.field
 
   %h4 画面上の挙動
   %ul
-    %li.field
 
   %h4 フォームとバリデーション
 

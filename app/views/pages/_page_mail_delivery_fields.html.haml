@@ -1,0 +1,4 @@
+%li.field.nested-fields
+  = f.input_field :mail_delivery_id, collection: MailDelivery.all, class: 'input xwide'
+  %div.danger.btn.small
+    = link_to_remove_association "削除", f
