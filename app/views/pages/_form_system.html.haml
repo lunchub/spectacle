@@ -1,0 +1,92 @@
+%fieldset
+  %legend 基本情報
+  
+  %ul
+    %li.field
+      = f.label :title, class: 'inline'
+      = f.input_field :title, class: 'input'
+    %li.field
+      = f.label :url, class: 'inline'
+      = f.input_field :url, class: 'input'
+
+  %h4 ページ目標
+  %ul
+    = f.simple_fields_for :page_goals do |page_goal_form|
+      = render 'page_goal_fields', f: page_goal_form
+    %li
+      = link_to_add_association 'ページ目標を追加', f, :page_goals
+    
+
+  %h4 オプション
+  %ul
+    = f.simple_fields_for :page_site_options do |page_site_option_form|
+      = render 'page_site_option_fields', f: page_site_option_form
+    %li
+      = link_to_add_association '関連するオプションを追加', f, :page_site_options
+
+  %h4 メール配信
+  %ul
+    %li.field
+
+%fieldset
+  %legend 前提条件
+
+  %ul
+    %li.field
+
+%fieldset
+  %legend 仕様
+
+  %ul
+    %li.field
+
+  %h4 画面上の挙動
+  %ul
+    %li.field
+
+  %h4 フォームとバリデーション
+
+  %table
+    %thead
+      %tr
+        %th 表示上の名目
+        %th システム上の名目
+        %th フォーム部品の種別
+        %th バリデーション内容
+    %tbody
+      %tr
+        %td
+        %td
+        %td
+        %td
+
+
+%fieldset
+  %legend リンク
+
+  %table
+    %thead
+      %tr
+        %th 表示要素
+        %th 遷移先ページ
+        %th URL
+    %tbody
+      %tr
+        %td
+        %td
+        %td
+
+%fieldset
+  %legend 業態間における備考
+
+
+%fieldset
+  %legend WEB版との比較事項
+
+
+%fieldset
+  %legend 疑問点
+
+
+
+
