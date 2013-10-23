@@ -8,8 +8,9 @@ class Page < ActiveRecord::Base
   has_many :site_options, through: :page_site_options
   accepts_nested_attributes_for :page_site_options, reject_if: proc { |attributes| attributes['site_option_id'].blank? } , allow_destroy: true
 
-  has_many :mail_deliveries, dependent: :destroy
-  accepts_nested_attributes_for :mail_deliveries, allow_destroy: true
+  has_many :page_mail_deliveries
+  has_many :mail_deliveries, through: :page_mail_deliveries
+  accepts_nested_attributes_for :page_mail_deliveries, reject_if: :all_blank, allow_destroy: true
 
   has_many :page_preconditions, dependent: :destroy
   accepts_nested_attributes_for :page_preconditions, allow_destroy: true

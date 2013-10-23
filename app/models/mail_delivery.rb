@@ -1,3 +1,4 @@
 class MailDelivery < ActiveRecord::Base
-  belongs_to :page
+  has_many :page_mail_deliveries
+  has_many :pages
 end
