@@ -1,19 +1,26 @@
-%h1 Listing site_options
+%div.twelve.columns
 
-%table
-  %tr
-    %th Name
-    %th
-    %th
-    %th
+  %h2 Listing site_options
 
-  - @site_options.each do |site_option|
-    %tr
-      %td= site_option.name
-      %td= link_to 'Show', site_option
-      %td= link_to 'Edit', edit_site_option_path(site_option)
-      %td= link_to 'Destroy', site_option, :method => :delete, :data => { :confirm => 'Are you sure?' }
+  %p.large.btn.primary
+    = link_to 'New site_option', new_site_option_path
 
-%br
+  %table.striped
+    %thead
+      %tr
+        %th Name
+        %th
 
-= link_to 'New Site option', new_site_option_path
+    %tbody
+    - @site_options.each do |site_option|
+      %tr
+        %td
+          = link_to site_option, class: 'valign' do
+            = site_option.name
+        %td
+          %div.primary.small.btn
+            = link_to 'Edit', edit_site_option_path(site_option)
+          %div.danger.small.btn
+            = link_to 'Destroy', site_option, :method => :delete, :data => { :confirm => 'Are you sure?' }
+
+

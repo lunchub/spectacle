@@ -1,10 +1,14 @@
 %div.row
+  %h2
+    = @page.title
+    ページ
 
-  %div.twelve.columns
-    %div.secondary.xlarge.btn
-      = link_to 'LIST', pages_path
-    %div.primary.xlarge.btn.pull_right
-      = link_to 'EDIT', edit_page_path
+%div.row
+
+  %div.secondary.xlarge.btn
+    = link_to 'LIST', pages_path
+  %div.primary.xlarge.btn.pull_right
+    = link_to 'EDIT', edit_page_path
 
 %div.row
 

@@ -1,19 +1,26 @@
-%h1 Listing mail_deliveries
+%div.twelve.columns
 
-%table
-  %tr
-    %th Name
-    %th
-    %th
-    %th
+  %h2 Listing mail_deliveries
 
-  - @mail_deliveries.each do |mail_delivery|
-    %tr
-      %td= mail_delivery.name
-      %td= link_to 'Show', mail_delivery
-      %td= link_to 'Edit', edit_mail_delivery_path(mail_delivery)
-      %td= link_to 'Destroy', mail_delivery, :method => :delete, :data => { :confirm => 'Are you sure?' }
+  %p.large.btn.primary
+    = link_to 'New Mail delivery', new_mail_delivery_path
 
-%br
+  %table.striped
+    %thead
+      %tr
+        %th Name
+        %th
 
-= link_to 'New Mail delivery', new_mail_delivery_path
+    %tbody
+    - @mail_deliveries.each do |mail_delivery|
+      %tr
+        %td
+          = link_to mail_delivery, class: 'valign' do
+            = mail_delivery.name
+        %td
+          %div.primary.small.btn
+            = link_to 'Edit', edit_mail_delivery_path(mail_delivery)
+          %div.danger.small.btn
+            = link_to 'Destroy', mail_delivery, :method => :delete, :data => { :confirm => 'Are you sure?' }
+
+
