@@ -28,6 +28,9 @@ class Page < ActiveRecord::Base
   has_many :page_images, dependent: :destroy
   accepts_nested_attributes_for :page_images, allow_destroy: true
 
+
+  validates :title, presence: true
+
   def has_page_goals?
     self.page_goals.present?
   end
