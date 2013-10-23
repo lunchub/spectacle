@@ -69,6 +69,20 @@ class PagesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def page_params
-      params.require(:page).permit(:title, :url)
+      params.require(:page).permit(
+        :title, 
+        :url, 
+        page_goals_attributes: [
+          :id, 
+          :title, 
+          :_destroy, 
+        ], 
+        page_site_options_attributes: [
+          :id, 
+          :page_id, 
+          :site_option_id, 
+          :_destroy, 
+        ], 
+      )
     end
 end
