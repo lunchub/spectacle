@@ -2,20 +2,31 @@ class Page < ActiveRecord::Base
   # has_and_belongs_to_many :scenario
 
   has_many :page_goals, dependent: :destroy
+  accepts_nested_attributes_for :page_goals, allow_destroy: true
 
   has_many :site_options, dependent: :destroy
+  accepts_nested_attributes_for :site_options, allow_destroy: true
+
   has_many :mail_deliveries, dependent: :destroy
+  accepts_nested_attributes_for :mail_deliveries, allow_destroy: true
 
   has_many :page_preconditions, dependent: :destroy
+  accepts_nested_attributes_for :page_preconditions, allow_destroy: true
+
   has_many :page_specs, dependent: :destroy
+  accepts_nested_attributes_for :page_specs, allow_destroy: true
 
   has_many :page_actions, dependent: :destroy
+  accepts_nested_attributes_for :page_actions, allow_destroy: true
 
   has_many :page_links, dependent: :destroy
+  accepts_nested_attributes_for :page_links, allow_destroy: true
 
   has_many :questions, as: :questionable, dependent: :destroy
+  accepts_nested_attributes_for :questions, allow_destroy: true
 
   has_many :page_images, dependent: :destroy
+  accepts_nested_attributes_for :page_images, allow_destroy: true
 
   def has_page_goals?
     self.page_goals.present?
