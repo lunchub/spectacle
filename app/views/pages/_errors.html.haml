@@ -1,0 +1,8 @@
+%div.row
+  %div.twelve.columns
+  - if @page.errors.any?
+    #error_explanation.alert.danger
+      %h3= "#{pluralize(@page.errors.count, "error")} prohibited this page from being saved:"
+      %ul
+        - @page.errors.full_messages.each do |msg|
+          %li= msg

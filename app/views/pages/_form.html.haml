@@ -1,15 +1,6 @@
 = simple_form_for @page do |f|
 
   %div.row
-    %div.twelve.columns
-    - if @page.errors.any?
-      #error_explanation
-        %h3= "#{pluralize(@page.errors.count, "error")} prohibited this page from being saved:"
-        %ul
-          - @page.errors.full_messages.each do |msg|
-            %li= msg
-
-  %div.row
 
     %h2.twelve.columns
       %div.warning.xlarge.btn
