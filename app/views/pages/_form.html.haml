@@ -11,21 +11,21 @@
 
   %div.row
 
-    %div.twelve.columns
+    %h2.twelve.columns
       %div.warning.xlarge.btn
         = link_to 'Cancel', pages_path
       - unless @page.new_record?
-        %div.secondary.xlarge.btn
+        %div.info.xlarge.btn
           = link_to 'Show', page_path
       %div.primary.xlarge.btn.pull_right
         = f.submit 'Save'
 
   %div.row
 
-    %div.six.columns
+    %div.two.columns
       = render 'form_images', :f => f
 
-    %div.six.columns
+    %div.ten.columns
       
       %section.tabs
         %ul.tab-nav

@@ -5,10 +5,11 @@
 
 %div.row
 
-  %div.secondary.xlarge.btn
-    = link_to 'LIST', pages_path
-  %div.primary.xlarge.btn.pull_right
-    = link_to 'EDIT', edit_page_path
+  %h2.twelve.columns
+    %div.info.xlarge.btn
+      = link_to 'LIST', pages_path
+    %div.primary.xlarge.btn.pull_right
+      = link_to 'EDIT', edit_page_path
 
 %div.row
 
@@ -19,7 +20,7 @@
 
     %h3 基本情報
 
-    %table
+    %table.striped
       %thead
         %tr
           %th ページ名称

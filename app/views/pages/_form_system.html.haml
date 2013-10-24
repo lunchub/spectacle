@@ -59,7 +59,7 @@
 
   %h4 フォームとバリデーション
 
-  %table
+  %table.striped
     %thead
       %tr
         %th 表示上の名目
@@ -77,17 +77,17 @@
 %fieldset
   %legend リンク
 
-  %table
+  %table.striped
     %thead
       %tr
-        %th 表示要素
-        %th 遷移先ページ
-        %th URL
+        %th{style: 'width: 40%;'} 表示要素
+        %th リンク先ページ
+        %th
     %tbody
-      %tr
-        %td
-        %td
-        %td
+      = f.simple_fields_for :page_links do |page_link_form|
+        = render 'page_link_fields', f: page_link_form
+
+  = link_to_add_association 'リンクを追加', f, :page_links, { data: {:'association-insertion-traversal' => 'prev',  :'association-insertion-node' => 'table',  :'association-insertion-method' => :append} }
 
 %fieldset
   %legend 業態間における備考
