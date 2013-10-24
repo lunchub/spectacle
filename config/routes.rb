@@ -1,4 +1,5 @@
 Spectacle::Application.routes.draw do
+  devise_for :users
   resources :site_preconditions
 
   resources :page_images
