@@ -77,18 +77,6 @@ class PagesController < ApplicationController
           :title, 
           :_destroy, 
         ], 
-        page_site_options_attributes: [
-          :id, 
-          :page_id, 
-          :site_option_id, 
-          :_destroy, 
-        ], 
-        page_mail_deliveries_attributes: [
-          :id, 
-          :page_id, 
-          :mail_delivery_id, 
-          :_destroy, 
-        ], 
         page_preconditions_attributes: [
           :id, 
           :title, 
@@ -102,6 +90,24 @@ class PagesController < ApplicationController
         page_actions_attributes: [
           :id, 
           :title, 
+          :_destroy, 
+        ], 
+        page_links_attributes: [
+          :id, 
+          :element_name, 
+          :to_page_id, 
+          :_destroy, 
+        ], 
+        page_site_options_attributes: [
+          :id, 
+          :page_id, 
+          :site_option_id, 
+          :_destroy, 
+        ], 
+        page_mail_deliveries_attributes: [
+          :id, 
+          :page_id, 
+          :mail_delivery_id, 
           :_destroy, 
         ], 
       )
