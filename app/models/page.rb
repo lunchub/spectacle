@@ -8,6 +8,8 @@ class Page < ActiveRecord::Base
   has_many :page_goals, dependent: :destroy
   accepts_nested_attributes_for :page_goals, reject_if: :all_blank, allow_destroy: true
 
+  has_many :site_preconditions, dependent: :destroy
+  accepts_nested_attributes_for :site_preconditions, reject_if: :all_blank, allow_destroy: true
 
   has_many :page_specs, dependent: :destroy
   accepts_nested_attributes_for :page_specs, reject_if: :all_blank, allow_destroy: true
