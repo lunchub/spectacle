@@ -1,0 +1,4 @@
+%li.field.nested-fields
+  = f.input_field :site_precondition_id, collection: SitePrecondition.all, class: 'input xwide'
+  %div.danger.btn.small
+    = link_to_remove_association "削除", f
