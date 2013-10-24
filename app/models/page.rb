@@ -2,6 +2,9 @@ class Page < ActiveRecord::Base
   # has_and_belongs_to_many :scenario
 
   # 1:N
+  has_many :page_links, dependent: :destroy
+  accepts_nested_attributes_for :page_links, reject_if: :all_blank, allow_destroy: true
+
   has_many :page_goals, dependent: :destroy
   accepts_nested_attributes_for :page_goals, reject_if: :all_blank, allow_destroy: true
 
@@ -30,12 +33,12 @@ class Page < ActiveRecord::Base
   accepts_nested_attributes_for :page_mail_deliveries, reject_if: :all_blank, allow_destroy: true
 
   # 自己参照 N:N
-  has_many :from_page_relations, foreign_key: 'from_page_id', class_name: 'PageLink'
-  has_many :to_page_relations, foreign_key: 'to_page_id', class_name: 'PageLink'
-  has_many :from_pages, through: 'from_page_relations', class_name: 'PageLink', source: 'to_page'
-  has_many :to_pages, through: 'to_page_relations', class_name: 'PageLink', source: 'from_page'
-  accepts_nested_attributes_for :from_pages, reject_if: :all_blank, allow_destroy: true
-  accepts_nested_attributes_for :to_pages, reject_if: :all_blank, allow_destroy: true
+  # has_many :from_page_link_relations, foreign_key: 'from_page_id', class_name: 'PageLink'
+  # has_many :to_page_link_relations, foreign_key: 'to_page_id', class_name: 'PageLink'
+  # has_many :from_pages, through: :from_page_link_relations, source: 'to_page'
+  # has_many :to_pages, through: :to_page_link_relations, source: 'from_page'
+  # accepts_nested_attributes_for :from_pages, reject_if: :all_blank, allow_destroy: true
+  # accepts_nested_attributes_for :to_pages, reject_if: :all_blank, allow_destroy: true
 
 
   validates :title, presence: true
