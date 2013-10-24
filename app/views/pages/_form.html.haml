@@ -12,10 +12,10 @@
 
   %div.row
 
-    %div.two.columns
+    %div.six.columns
       = render 'form_images', :f => f
 
-    %div.ten.columns
+    %div.six.columns
       
       %section.tabs
         %ul.tab-nav
@@ -24,8 +24,8 @@
           %li
             = link_to 'デザイン指示書', '#'
 
-      %div.tab-content.active
-        = render 'form_system', :f => f
+        %div.tab-content.active
+          = render 'form_system', :f => f
 
-      %div.tab-content
-        = render 'form_design', :f => f
+        %div.tab-content
+          = render 'form_design', :f => f
