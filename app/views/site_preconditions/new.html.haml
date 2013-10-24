@@ -1,5 +1,34 @@
-%h1 New site_precondition
+%div.row
+  %h2
+    新しい
+    前提条件
 
-= render 'form'
+= simple_form_for @site_precondition do |f|
 
-= link_to 'Back', site_preconditions_path
+  %div.row
+    %div.twelve.columns
+    - if @site_precondition.errors.any?
+      #error_explanation
+        %h3= "#{pluralize(@site_precondition.errors.count, "error")} prohibited this site_precondition from being saved:"
+        %ul
+          - @site_precondition.errors.full_messages.each do |msg|
+            %li= msg
+
+  %div.row
+
+    %h2.twelve.columns
+      %div.warning.xlarge.btn
+        = link_to 'Cancel', site_preconditions_path
+      %div.primary.xlarge.btn.pull_right
+        = f.submit 'Save'
+
+  %div.row
+
+    %div.twelve.columns
+
+      %fieldset
+        
+        %ul
+          %li.field
+            = f.label :title, class: 'inline'
+            = f.input_field :title, class: 'input'

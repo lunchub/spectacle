@@ -1,21 +1,24 @@
-%h1 Listing site_preconditions
+%div.twelve.columns
 
-%table
-  %tr
-    %th Title
-    %th Page
-    %th
-    %th
-    %th
+  %p.large.btn.primary
+    = link_to 'New Site Precondition', new_site_precondition_path
 
-  - @site_preconditions.each do |site_precondition|
-    %tr
-      %td= site_precondition.title
-      %td= site_precondition.page
-      %td= link_to 'Show', site_precondition
-      %td= link_to 'Edit', edit_site_precondition_path(site_precondition)
-      %td= link_to 'Destroy', site_precondition, :method => :delete, :data => { :confirm => 'Are you sure?' }
+  %table.striped
+    %thead
+      %tr
+        %th Title
+        %th
 
-%br
+    %tbody
+    - @site_preconditions.each do |site_precondition|
+      %tr
+        %td
+          = link_to site_precondition, class: 'valign' do
+            = site_precondition.title
+        %td
+          %div.primary.small.btn
+            = link_to 'Edit', edit_site_precondition_path(site_precondition)
+          %div.danger.small.btn
+            = link_to 'Destroy', site_precondition, :method => :delete, :data => { :confirm => 'Are you sure?' }
 
-= link_to 'New Site precondition', new_site_precondition_path
+

@@ -1,9 +1,31 @@
-= simple_form_for(@site_precondition) do |f|
-  = f.error_notification
+= simple_form_for @page do |f|
 
-  .form-inputs
-    = f.input :title
-    = f.association :page
+  %div.row
+    %div.twelve.columns
+    - if @page.errors.any?
+      #error_explanation
+        %h3= "#{pluralize(@page.errors.count, "error")} prohibited this page from being saved:"
+        %ul
+          - @page.errors.full_messages.each do |msg|
+            %li= msg
 
-  .form-actions
-    = f.button :submit
+  %div.row
+
+    %h2.twelve.columns
+      %div.warning.xlarge.btn
+        = link_to 'Cancel', pages_path
+      %div.info.xlarge.btn
+        = link_to 'Show', page_path
+      %div.primary.xlarge.btn.pull_right
+        = f.submit 'UPDATE'
+
+  %div.row
+
+    %div.twelve.columns
+
+      %fieldset
+        
+        %ul
+          %li.field
+            = f.label :title, class: 'inline'
+            = f.input_field :title, class: 'input'
