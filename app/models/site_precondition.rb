@@ -1,3 +1,4 @@
 class SitePrecondition < ActiveRecord::Base
-  belongs_to :page
+  has_many :page_site_preconditions
+  has_many :pages
 end
