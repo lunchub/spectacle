@@ -3,4 +3,36 @@
     新しい
     ページ
 
-= render 'form'
+= simple_form_for @page do |f|
+
+  %div.row
+    %div.twelve.columns
+    - if @page.errors.any?
+      #error_explanation
+        %h3= "#{pluralize(@page.errors.count, "error")} prohibited this page from being saved:"
+        %ul
+          - @page.errors.full_messages.each do |msg|
+            %li= msg
+
+  %div.row
+
+    %h2.twelve.columns
+      %div.warning.xlarge.btn
+        = link_to 'Cancel', pages_path
+      %div.primary.xlarge.btn.pull_right
+        = f.submit 'Save'
+
+  %div.row
+
+    %div.twelve.columns
+
+      %fieldset
+        %legend 基本情報
+        
+        %ul
+          %li.field
+            = f.label :title, class: 'inline'
+            = f.input_field :title, class: 'input'
+          %li.field
+            = f.label :url, class: 'inline'
+            = f.input_field :url, class: 'input'
