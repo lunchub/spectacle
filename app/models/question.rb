@@ -1,5 +1,5 @@
 class Question < ActiveRecord::Base
-  belongs_to :page
+  belongs_to :questionable, polymorphic: true
 
   has_many :answers, dependent: :destroy
 end
