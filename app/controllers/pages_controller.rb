@@ -77,11 +77,6 @@ class PagesController < ApplicationController
           :title, 
           :_destroy, 
         ], 
-        page_preconditions_attributes: [
-          :id, 
-          :title, 
-          :_destroy, 
-        ], 
         page_specs_attributes: [
           :id, 
           :title, 
@@ -106,6 +101,12 @@ class PagesController < ApplicationController
             :id, 
             :comment, 
           ], 
+        ], 
+        page_site_preconditions_attributes: [
+          :id, 
+          :page_id, 
+          :site_precondition_id, 
+          :_destroy, 
         ], 
         page_site_options_attributes: [
           :id, 
