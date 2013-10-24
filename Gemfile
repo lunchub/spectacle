@@ -59,6 +59,9 @@ gem 'paper_trail', '>= 3.0.0.beta1'
 # Observer
 gem 'rails-observers'
 
+# authentication
+gem 'devise'
+
 # quiet_assets
 group :development, :test do
   gem 'quiet_assets'
