@@ -56,6 +56,9 @@ gem 'carrierwave'
 # versions
 gem 'paper_trail', '>= 3.0.0.beta1'
 
+# Observer
+gem 'rails-observers'
+
 # quiet_assets
 group :development, :test do
   gem 'quiet_assets'
@@ -81,6 +84,7 @@ end
 group :test do
   gem 'rspec'
   gem 'rspec-rails'
+  ENV['NOKOGIRI_USE_SYSTEM_LIBRARIES'] = 'YES'
   gem 'capybara'
   gem 'poltergeist'
   gem 'spork'
@@ -95,5 +99,3 @@ end
 # Graph
 gem 'gviz'
 
-# Observer
-gem 'rails-observers'
