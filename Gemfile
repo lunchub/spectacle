@@ -53,6 +53,9 @@ gem 'draper'
 # uploader
 gem 'carrierwave'
 
+# versions
+gem 'paper_trail', '>= 3.0.0.beta1'
+
 # quiet_assets
 group :development, :test do
   gem 'quiet_assets'
