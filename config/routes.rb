@@ -1,11 +1,11 @@
 Spectacle::Application.routes.draw do
+  resources :site_preconditions
+
   resources :page_images
 
   resources :answers
 
   resources :page_specs
-
-  resources :page_preconditions
 
   resources :page_goals
 

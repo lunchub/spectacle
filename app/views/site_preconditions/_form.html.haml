@@ -1,0 +1,9 @@
+= simple_form_for(@site_precondition) do |f|
+  = f.error_notification
+
+  .form-inputs
+    = f.input :title
+    = f.association :page
+
+  .form-actions
+    = f.button :submit
