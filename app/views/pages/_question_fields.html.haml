@@ -1,0 +1,10 @@
+%li.field.nested-fields
+  %fieldset
+    = f.text_area :title, class: 'input textarea'
+    -# %div.danger.btn.large
+    -#   = link_to_remove_association "削除", f
+    %ul
+      = f.simple_fields_for :answers do |answer_form|
+        = render 'answer_fields', f: answer_form
+      %li
+        = link_to_add_association '回答を追加', f, :answers

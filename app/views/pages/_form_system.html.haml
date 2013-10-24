@@ -99,6 +99,11 @@
 
 %fieldset
   %legend 疑問点
+  %ul
+    = f.simple_fields_for :questions do |question_form|
+      = render 'question_fields', f: question_form
+    %li
+      = link_to_add_association '疑問点を追加', f, :questions
 
 
 
