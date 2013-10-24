@@ -11,4 +11,18 @@
     = render 'shared/navigation'
 
     %div#container.row
+      %div.row.errors
+
+        - if notice.present?
+          %div.twelve.columns.alert.danger
+            %h3
+              Notice: 
+              = notice
+
+        - if alert.present?
+          %div.twelve.columns.alert.danger
+            %h3
+              Alert:
+              = alert
+
       = yield
