@@ -98,18 +98,27 @@ class PagesController < ApplicationController
           :to_page_id, 
           :_destroy, 
         ], 
+        questions_attributes: [
+          :id, 
+          :title, 
+          :_destroy,
+          answers_attributes: [
+            :id, 
+            :comment, 
+          ], 
+        ], 
         page_site_options_attributes: [
           :id, 
           :page_id, 
           :site_option_id, 
           :_destroy, 
-        ], 
+        ],
         page_mail_deliveries_attributes: [
           :id, 
           :page_id, 
           :mail_delivery_id, 
           :_destroy, 
-        ], 
+        ],
       )
     end
 end
