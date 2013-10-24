@@ -14,3 +14,15 @@
 //= require jquery_ujs
 //= require turbolinks
 //= require cocoon
+//= require gumby/libs/modernizr-2.6.2.min
+//= require gumby/libs/gumby
+//= require gumby/main
+//= require gumby/libs/ui/gumby.tabs
+
+// initialize Gumby and all included UI modules
+Gumby.init();
+
+// initialize Gumby with only the specified UI modules
+Gumby.init({
+  uiModules: ['tabs']
+});
