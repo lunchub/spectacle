@@ -1,8 +1,16 @@
-%h2 Forgot your password?
-= simple_form_for(resource, :as => resource_name, :url => password_path(resource_name), :html => { :method => :post }) do |f|
-  = f.error_notification
-  .form-inputs
-    = f.input :email, :required => true, :autofocus => true
-  .form-actions
-    = f.button :submit, "Send me reset password instructions"
-= render "devise/shared/links"
+%div#password_new.row
+
+  %section.four.columns.centered.text-center
+
+    = simple_form_for(resource, :as => resource_name, :url => password_path( resource_name), html: { method: :post } ) do |f|
+
+      %ul.field
+        %li.error
+          = f.full_error :email
+        %li
+          = f.input_field :email, autofocus: true, class: 'input xwide ', placeholder: 'Email address'
+        %li
+          %div.primary.btn.medium.xwide
+            = f.submit 'Send me reset password instructions'
+
+      = render "devise/shared/links"

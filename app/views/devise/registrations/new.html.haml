@@ -1,10 +1,24 @@
-%h2 Sign up
-= simple_form_for(resource, :as => resource_name, :url => registration_path(resource_name)) do |f|
-  = f.error_notification
-  .form-inputs
-    = f.input :email, :required => true, :autofocus => true
-    = f.input :password, :required => true
-    = f.input :password_confirmation, :required => true
-  .form-actions
-    = f.button :submit, "Sign up"
-= render "devise/shared/links"
+%div#signup.row
+
+  %section.four.columns.centered.text-center
+
+    = simple_form_for(resource, :as => resource_name, :url => registration_path(resource_name)) do |f|
+
+      %ul.field
+        %li.error
+          = f.full_error :email
+        %li
+          = f.input_field :email, autofocus: true, class: 'input xwide ', placeholder: 'Email address'
+        %li.error
+          = f.full_error :password
+        %li
+          = f.input_field :password, class: 'input xwide ', placeholder: 'Password'
+        %li.error
+          = f.full_error :password_confirmation
+        %li
+          = f.input_field :password_confirmation, class: 'input xwide ', placeholder: 'Password'
+        %li
+          %div.primary.btn.medium.xwide
+            = f.submit 'Sing up'
+
+      = render "devise/shared/links"
