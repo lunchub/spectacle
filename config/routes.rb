@@ -1,4 +1,6 @@
 Spectacle::Application.routes.draw do
+  resources :projects
+
   get 'dashboard' => 'dashboard#index'
 
   devise_for :users, :controllers => { :registrations => "registrations" }
