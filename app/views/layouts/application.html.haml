@@ -14,15 +14,13 @@
       %div.row.errors
 
         - if notice.present?
-          %div.twelve.columns.alert.danger
-            %h3
-              Notice: 
-              = notice
+          %div.twelve.columns.alert.primary
+            Notice: 
+            = notice
 
         - if alert.present?
           %div.twelve.columns.alert.danger
-            %h3
-              Alert:
-              = alert
+            Alert:
+            = alert
 
       = yield
