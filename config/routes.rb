@@ -1,6 +1,11 @@
 Spectacle::Application.routes.draw do
-  get "dashboard/index"
-  devise_for :users
+  get 'dashboard' => 'dashboard#index'
+
+  devise_for :users, :controllers => { :registrations => "registrations" }
+  devise_scope :user do
+    get '/' => 'devise/sessions#new'
+  end
+
   resources :site_preconditions
 
   resources :page_images
@@ -17,7 +22,6 @@ Spectacle::Application.routes.draw do
 
   resources :site_options
 
-  get "index/index"
   resources :page_actions
 
   resources :pages
@@ -32,6 +36,8 @@ Spectacle::Application.routes.draw do
   # See how all your routes lay out with "rake routes".
 
   # You can have the root of your site routed with "root"
+
+  get "index/index"
   root 'index#index'
 
   # Example of regular route:
