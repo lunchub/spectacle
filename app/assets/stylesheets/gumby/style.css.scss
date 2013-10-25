@@ -1,0 +1,75 @@
+/*
+We highly recommend you use SASS and write your custom styles in sass/_custom.scss.
+However, this blank file is available if you prefer
+*/
+#top_bg {
+  # -webkit-filter: blur(2px);
+  # -moz-filter: blur(2px);
+  # filter: blur(2px);
+  # opacity: 0.7;
+  min-height: 100%;
+  background: image-url('/images/bg/bg.jpg') no-repeat center;
+  background-size:cover;
+}
+
+#navbar-main-nav {
+  margin-bottom: 0;
+}
+
+#inner_nav {
+  background: #E9E9E9;
+  padding-top: 20px;
+  margin-bottom: 40px;
+
+  ul {
+    text-align: center;
+    li {
+      text-align: center;
+      display: inline-block;
+      height: 50px;
+    }
+  }
+
+  a {
+    color: #555555;
+    white-space: nowrap;
+  }
+
+  & .btn {
+    background: none;
+    -webkit-transition: 0.4s;
+    -moz-transition: 0.4s;
+    -o-transition: 0.4s;
+    transition: 0.4s;
+  }
+}
+
+#password_new, 
+#password_edit, 
+#signup, 
+#signin {
+  height: 100%;
+  position: relative;
+  & > section {
+    color: #fff;
+    position: absolute;
+    top: 25%;
+    background: rgba(55, 55, 55, 0.6);
+    -webkit-border-radius: 4px; -moz-border-radius: 4px; -ms-border-radius: 4px; -o-border-radius: 4px; border-radius: 4px;
+    form {
+      padding: 13.33333% 0;
+      margin: 0;
+      li.error {
+        padding: 0;
+      }
+      a {
+        color: #fff;
+      }
+    }
+    .field .input {
+      color: #fff;
+      background: rgba(0, 0, 0, 0.4);
+      border: none;
+    }
+  }
+}
