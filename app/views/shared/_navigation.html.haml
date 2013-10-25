@@ -1,24 +1,32 @@
-%div.navbar.headnav
-  = link_to '#', class: 'toggle', 'gumby-trigger' => '.headnav > ul' do
-    %i.icon-menu
+%nav#navbar-main-nav.navbar.headnav
+  %nav.pull_left
+    %ul
+      %li
+        = link_to 'Dashboard', dashboard_path
 
-  -# %h1.four.columns.logo
-  -#   = link_to 'Home', root_path
+  %nav.pull_left
+    %ul
+      %li
+        = link_to 'Projects', '#'
 
-  %ul.eight.columns
+  %nav.pull_right
+    %ul
+      %li
+        = link_to 'Profile', '#'
+      %li
+        = link_to 'Logout', destroy_user_session_path, method: :delete
+
+%div#inner_nav.row
+  %ul.twelve.columns
     %li
-      = link_to 'Home', root_path
+      %div.btn.medium
+        = link_to 'Pages', pages_path
     %li
-      = link_to 'Pages', pages_path
+      %div.btn.medium
+        = link_to 'Site Preconditions', site_preconditions_path
     %li
-      = link_to 'Site Preconditions', site_preconditions_path
+      %div.btn.medium
+        = link_to 'Site Options', site_options_path
     %li
-      = link_to 'Site Options', site_options_path
-    %li
-      = link_to 'Mail Deliveries', mail_deliveries_path
-    -# %li
-    -#   = link_to 'Scenarios', scenarios_path
-    -# %li
-    -#   = link_to 'Questions', questions_path
-    -# %li
-    -#   = link_to 'PageActions', page_actions_path
+      %div.btn.medium
+        = link_to 'Mail Deliveries', mail_deliveries_path
