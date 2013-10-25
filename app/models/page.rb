@@ -2,6 +2,8 @@ class Page < ActiveRecord::Base
   has_paper_trail
   # has_and_belongs_to_many :scenario
 
+  belongs_to :project
+
   # 1:N
   has_many :page_links, dependent: :destroy
   accepts_nested_attributes_for :page_links, reject_if: :all_blank, allow_destroy: true
