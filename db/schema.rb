@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20131025091445) do
+ActiveRecord::Schema.define(version: 20131026063256) do
 
   create_table "answers", force: true do |t|
     t.text     "comment"
@@ -157,6 +157,16 @@ ActiveRecord::Schema.define(version: 20131025091445) do
   end
 
   add_index "site_preconditions", ["page_id"], name: "index_site_preconditions_on_page_id"
+
+  create_table "user_profiles", force: true do |t|
+    t.string   "name"
+    t.string   "avater"
+    t.integer  "user_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "user_profiles", ["user_id"], name: "index_user_profiles_on_user_id"
 
   create_table "users", force: true do |t|
     t.string   "email",                  default: "", null: false
