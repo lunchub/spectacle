@@ -1,8 +1,11 @@
 %li.field.nested-fields
   %fieldset
+    %h5 質問 
     = f.text_area :title, class: 'input textarea'
     -# %div.danger.btn.large
     -#   = link_to_remove_association "削除", f
+
+    %h5 回答
     %ul
       = f.simple_fields_for :answers do |answer_form|
         = render 'answer_fields', f: answer_form
