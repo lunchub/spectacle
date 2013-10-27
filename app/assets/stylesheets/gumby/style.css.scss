@@ -2,8 +2,19 @@
 We highly recommend you use SASS and write your custom styles in sass/_custom.scss.
 However, this blank file is available if you prefer
 */
-fieldset { border-style: solid; border-width: 0.0625em; padding: 1.5625em; border-color: #d8d8d8; margin: 18px 0; }
+fieldset { 
+  border-style: solid;
+  border-width: 0.0625em;
+  padding: 1.5625em;
+  border-color: #d8d8d8;
+  margin: 18px 0; 
+  ul {
+    list-style-type: decimal;
+    list-style-position: inside;
+  }
+}
 fieldset legend { padding: 5px 10px; }
+
 
 #top_bg {
   # -webkit-filter: blur(2px);
