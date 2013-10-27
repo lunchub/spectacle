@@ -1,13 +1,6 @@
-= simple_form_for @site_precondition do |f|
+= render 'errors'
 
-  %div.row
-    %div.twelve.columns
-    - if @site_precondition.errors.any?
-      #error_explanation
-        %h3= "#{pluralize(@site_precondition.errors.count, "error")} prohibited this site_precondition from being saved:"
-        %ul
-          - @site_precondition.errors.full_messages.each do |msg|
-            %li= msg
+= simple_form_for @site_precondition do |f|
 
   %div.row
 
