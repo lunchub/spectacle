@@ -16,17 +16,18 @@
       %li
         = link_to 'Logout', destroy_user_session_path, method: :delete
 
-%div#inner_nav.row
-  %ul.twelve.columns
-    %li
-      %div.btn.medium
-        = link_to 'Pages', pages_path
-    %li
-      %div.btn.medium
-        = link_to 'Site Preconditions', site_preconditions_path
-    %li
-      %div.btn.medium
-        = link_to 'Site Options', site_options_path
-    %li
-      %div.btn.medium
-        = link_to 'Mail Deliveries', mail_deliveries_path
+%div#inner_nav
+  %div.row
+    %ul.twelve.columns
+      %li
+        %div.btn.medium
+          = link_to 'Pages', pages_path
+      %li
+        %div.btn.medium
+          = link_to 'Site Preconditions', site_preconditions_path
+      %li
+        %div.btn.medium
+          = link_to 'Site Options', site_options_path
+      %li
+        %div.btn.medium
+          = link_to 'Mail Deliveries', mail_deliveries_path
