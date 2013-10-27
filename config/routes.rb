@@ -1,4 +1,7 @@
 Spectacle::Application.routes.draw do
+  resource :profile, except: [:index, :create, :destroy], as: :profile
+  match '/profile' => 'profiles#create', via: :post
+
   resources :projects
 
   get 'dashboard' => 'dashboard#index'
