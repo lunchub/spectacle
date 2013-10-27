@@ -15,6 +15,12 @@ fieldset {
 }
 fieldset legend { padding: 5px 10px; }
 
+.btn > span {
+  display: block;
+  padding: 0 18px;
+  color: white;
+  height: 100%;
+}
 
 #top_bg {
   # -webkit-filter: blur(2px);
