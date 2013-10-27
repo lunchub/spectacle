@@ -1,0 +1,13 @@
+%h2.twelve.columns
+  %div.warning.xlarge.btn
+    = link_to 'Cancel', site_options_path
+
+  - if @site_option.persisted?
+    %div.info.xlarge.btn
+      = link_to 'Show', site_option_path
+    %div.primary.xlarge.btn.pull_right
+      = f.submit 'UPDATE'
+
+  - if @site_option.new_record?
+    %div.primary.xlarge.btn.pull_right
+      = f.submit 'Save'

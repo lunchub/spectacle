@@ -1,9 +1,17 @@
-%p#notice= notice
+%div.row
 
-%p
-  %b Name:
-  = @site_option.name
+  %h2.twelve.columns
+    %div.info.xlarge.btn
+      = link_to 'LIST', site_options_path
+    %div.primary.xlarge.btn.pull_right
+      = link_to 'EDIT', edit_site_option_path
 
-= link_to 'Edit', edit_site_option_path(@site_option)
-\|
-= link_to 'Back', site_options_path
+%div.row
+
+  %div.twelve.columns
+
+    %fieldset
+      
+      %ul
+        %li.field
+          = @site_option.name

@@ -1,8 +1,19 @@
-= simple_form_for(@site_option) do |f|
-  = f.error_notification
+= render 'errors'
 
-  .form-inputs
-    = f.input :name
+= simple_form_for @site_option do |f|
 
-  .form-actions
-    = f.button :submit
+
+  %div.row
+
+    = render 'menu', f: f
+
+  %div.row
+
+    %div.twelve.columns
+
+      %fieldset
+        
+        %ul
+          %li.field
+            = f.label :name, class: 'inline'
+            = f.input_field :name, class: 'input'
