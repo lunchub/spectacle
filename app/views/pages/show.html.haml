@@ -7,15 +7,15 @@
 
   %h2.twelve.columns
     %div.info.xlarge.btn
-      = link_to 'LIST', pages_path
+      = link_to 'List', pages_path
     %div.primary.xlarge.btn.pull_right
-      = link_to 'EDIT', edit_page_path
+      = link_to 'Edit', edit_page_path
 
 %div.row
 
-  %div.six.columns
+  %div.two.columns
 
-  %div.six.columns
+  %div.ten.columns
 
     %fieldset
       %legend 基本情報
@@ -89,8 +89,8 @@
           %thead
             %tr
               %th 表示要素
-              %th フォーム部品の種別
-              %th バリデーション内容
+              %th フォームタイプ
+              %th{style: 'width:40%;'} バリデーション
           %tbody
             - @page.page_form_elements.each do |page_form_element|
               %tr.nested-fields.field
@@ -111,7 +111,7 @@
           %thead
             %tr
               %th 表示要素
-              %th リンク先ページ
+              %th リンク先
           %tbody
             - @page.page_links.each do |page_link|
               %tr.field

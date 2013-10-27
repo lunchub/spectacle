@@ -3,19 +3,21 @@
   %div.row
 
     %h2.twelve.columns
-      %div.warning.xlarge.btn
-        = link_to 'Cancel', pages_path
+      %div.info.xlarge.btn
+        = link_to 'List', pages_path
       %div.info.xlarge.btn
         = link_to 'Show', page_path
+      %div.info.xlarge.btn
+        = link_to 'History', '#'
       %div.primary.xlarge.btn.pull_right
-        = f.submit 'UPDATE'
+        = f.submit 'Update'
 
   %div.row
 
-    %div.six.columns
+    %div.two.columns
       = render 'form_images', f: f
 
-    %div.six.columns
+    %div.ten.columns
       
       %section.tabs
         %ul.tab-nav

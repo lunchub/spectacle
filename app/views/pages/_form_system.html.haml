@@ -1,15 +1,15 @@
 %fieldset
   %legend 基本情報
   
-  %h4 ページ名
+  %h5 ページ名
   %div.field
     = f.input_field :title, class: 'input'
 
-  %h4 URL
+  %h5 URL
   %div.field
     = f.input_field :url, class: 'input'
 
-  %h4 ページ目標
+  %h5 ページ目標
   %ul
     = f.simple_fields_for :page_goals do |page_goal_form|
       = render 'page_goal_fields', f: page_goal_form
@@ -17,19 +17,25 @@
       = link_to_add_association 'ページ目標を追加', f, :page_goals
     
 
-  %h4 オプション
+%fieldset
+  %legend 基本情報
+
   %ul
     = f.simple_fields_for :page_site_options do |page_site_option_form|
       = render 'page_site_option_fields', f: page_site_option_form
     %li
       = link_to_add_association '関連するオプションを追加', f, :page_site_options
 
-  %h4 メール配信
+
+%fieldset
+  %legend メール配信
+
   %ul
     = f.simple_fields_for :page_mail_deliveries do |page_mail_delivery_form|
       = render 'page_mail_delivery_fields', f: page_mail_delivery_form
     %li
       = link_to_add_association '関連するメール配信を追加', f, :page_mail_deliveries
+
 
 %fieldset
   %legend 前提条件
@@ -40,17 +46,18 @@
     %li
       = link_to_add_association '前提条件を追加', f, :page_site_preconditions
 
+
 %fieldset
   %legend 仕様
 
-  %h4 仕様
+  %h5 仕様
   %ul
     = f.simple_fields_for :page_specs do |page_spec_form|
       = render 'page_spec_fields', f: page_spec_form
     %li
       = link_to_add_association '仕様を追加', f, :page_specs
 
-  %h4 画面上の挙動
+  %h5 画面上の挙動
   %ul
     = f.simple_fields_for :page_actions do |page_action_form|
       = render 'page_action_fields', f: page_action_form
@@ -58,9 +65,10 @@
       = link_to_add_association '画面上の挙動を追加', f, :page_actions
 
 
-  %h4 業態間の比較事項
+  %h5 業態間の比較事項
 
-  %h4 デバイス間の比較事項
+  %h5 デバイス間の比較事項
+
 
 %fieldset
   %legend フォーム
@@ -69,14 +77,15 @@
     %thead
       %tr
         %th 表示要素
-        %th フォーム部品の種別
-        %th バリデーション内容
+        %th フォームタイプ
+        %th{style: 'width:40%;'} バリデーション
         %th
     %tbody
       = f.simple_fields_for :page_form_elements do |page_form_element_form|
         = render 'page_form_element_fields', f: page_form_element_form
 
   = link_to_add_association 'フォーム要素を追加', f, :page_form_elements, { data: {:'association-insertion-traversal' => 'prev',  :'association-insertion-node' => 'table',  :'association-insertion-method' => :append} }
+
 
 %fieldset
   %legend リンク
@@ -85,7 +94,7 @@
     %thead
       %tr
         %th{style: 'width: 40%;'} 表示要素
-        %th リンク先ページ
+        %th リンク先
         %th
     %tbody
       = f.simple_fields_for :page_links do |page_link_form|
