@@ -1,9 +1,17 @@
-%p#notice= notice
+%div.row
 
-%p
-  %b Name:
-  = @validation.name
+  %h2.twelve.columns
+    %div.info.xlarge.btn
+      = link_to 'LIST', validations_path
+    %div.primary.xlarge.btn.pull_right
+      = link_to 'EDIT', edit_validation_path
 
-= link_to 'Edit', edit_validation_path(@validation)
-\|
-= link_to 'Back', validations_path
+%div.row
+
+  %div.twelve.columns
+
+    %fieldset
+      
+      %ul
+        %li.field
+          = @validation.name
