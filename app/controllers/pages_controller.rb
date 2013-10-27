@@ -120,6 +120,12 @@ class PagesController < ApplicationController
           :mail_delivery_id, 
           :_destroy, 
         ],
+        page_validations_attributes: [
+          :id, 
+          :page_id, 
+          :validation_id, 
+          :_destroy, 
+        ],
       )
     end
 end
