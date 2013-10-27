@@ -1,13 +1,13 @@
 %fieldset
   %legend 基本情報
   
-  %ul
-    %li.field
-      = f.label :title, class: 'inline'
-      = f.input_field :title, class: 'input'
-    %li.field
-      = f.label :url, class: 'inline'
-      = f.input_field :url, class: 'input'
+  %h4 ページ名
+  %div.field
+    = f.input_field :title, class: 'input'
+
+  %h4 URL
+  %div.field
+    = f.input_field :url, class: 'input'
 
   %h4 ページ目標
   %ul
