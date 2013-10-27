@@ -97,6 +97,7 @@ class PagesController < ApplicationController
           :id, 
           :element_name, 
           :input_type, 
+          :required, 
           :validation_id, 
           :_destroy, 
         ], 

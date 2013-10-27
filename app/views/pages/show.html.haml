@@ -6,7 +6,7 @@
 %div.row
 
   %h2.twelve.columns
-    %div.info.xlarge.btn
+    %div.default.xlarge.btn
       = link_to 'List', pages_path
     %div.primary.xlarge.btn.pull_right
       = link_to 'Edit', edit_page_path
@@ -90,6 +90,7 @@
             %tr
               %th 表示要素
               %th フォームタイプ
+              %th{style: 'width:10%;'}  必須
               %th{style: 'width:40%;'} バリデーション
           %tbody
             - @page.page_form_elements.each do |page_form_element|
@@ -98,6 +99,10 @@
                   = page_form_element.element_name
                 %td
                   = page_form_element.input_type
+                %td
+                  - if page_form_element.required
+                    %div.btn.danger.small
+                      %span 必須
                 %td
                   - if page_form_element.validation.present?
                     = page_form_element.validation.name

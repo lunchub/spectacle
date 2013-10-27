@@ -78,8 +78,9 @@
       %tr
         %th 表示要素
         %th フォームタイプ
+        %th{style: 'width:10%;'}  必須
         %th{style: 'width:40%;'} バリデーション
-        %th
+        %th{style: 'width:10%;'}
     %tbody
       = f.simple_fields_for :page_form_elements do |page_form_element_form|
         = render 'page_form_element_fields', f: page_form_element_form

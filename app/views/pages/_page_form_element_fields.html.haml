@@ -4,6 +4,10 @@
   %td
     = f.input_field :input_type, collection: ['テキストフィールド', 'テキストエリア', 'プルダウン', 'ラジオボタン', 'チェックボックス'], class: 'input'
   %td
+    %label.checkbox{for: "required_#{f.object.id}"}
+      = f.input_field :required, as: :boolean, id: "required_#{f.object.id}", label: false, boolean_style: :inline
+      %span
+  %td
     = f.input_field :validation_id, collection: Validation.all, class: 'input'
   %td
     %div.danger.btn.small
