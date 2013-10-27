@@ -1,0 +1,8 @@
+%div.row
+  %div.twelve.columns
+  - if @mail_delivery.errors.any?
+    #error_explanation.alert.danger
+      %h3= "#{pluralize(@mail_delivery.errors.count, "error")} prohibited this page from being saved:"
+      %ul
+        - @mail_delivery.errors.full_messages.each do |msg|
+          %li= msg
