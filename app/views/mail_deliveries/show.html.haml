@@ -1,9 +1,17 @@
-%p#notice= notice
+%div.row
 
-%p
-  %b Name:
-  = @mail_delivery.name
+  %h2.twelve.columns
+    %div.default.xlarge.btn
+      = link_to 'List', mail_deliveries_path
+    %div.primary.xlarge.btn.pull_right
+      = link_to 'Edit', edit_mail_delivery_path
 
-= link_to 'Edit', edit_mail_delivery_path(@mail_delivery)
-\|
-= link_to 'Back', mail_deliveries_path
+%div.row
+
+  %div.twelve.columns
+
+    %fieldset
+      
+      %ul
+        %li.field
+          = @mail_delivery.name

@@ -1,12 +1,15 @@
 %h2.twelve.columns
-  %div.warning.xlarge.btn
-    = link_to 'Cancel', mail_deliveries_path
+  - if @mail_delivery.new_record?
+    %div.warning.xlarge.btn
+      = link_to 'Cancel', mail_deliveries_path
 
   - if @mail_delivery.persisted?
+    %div.default.xlarge.btn
+      = link_to 'List', mail_deliveries_path
     %div.info.xlarge.btn
       = link_to 'Show', mail_delivery_path
     %div.primary.xlarge.btn.pull_right
-      = f.submit 'UPDATE'
+      = f.submit 'Update'
 
   - if @mail_delivery.new_record?
     %div.primary.xlarge.btn.pull_right
