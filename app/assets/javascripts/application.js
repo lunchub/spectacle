@@ -18,6 +18,7 @@
 //= require gumby/libs/gumby
 //= require gumby/main
 //= require gumby/libs/ui/gumby.tabs
+//= require gumby/libs/ui/gumby.checkbox
 
 // initialize Gumby and all included UI modules
 Gumby.init();
