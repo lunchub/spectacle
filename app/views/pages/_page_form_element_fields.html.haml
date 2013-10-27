@@ -1,0 +1,10 @@
+%tr.nested-fields.field
+  %td
+    = f.input_field :element_name, class: 'input'
+  %td
+    = f.input_field :input_type, collection: ['テキストフィールド', 'テキストエリア', 'プルダウン', 'ラジオボタン', 'チェックボックス'], class: 'input'
+  %td
+    = f.input_field :validation_id, collection: Validation.all, class: 'input'
+  %td
+    %div.danger.btn.small
+      = link_to_remove_association "削除", f

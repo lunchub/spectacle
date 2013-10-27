@@ -68,14 +68,15 @@
   %table.striped
     %thead
       %tr
-        %th 表示上の名目
+        %th 表示要素
         %th フォーム部品の種別
         %th バリデーション内容
+        %th
     %tbody
-      %tr
-        %td
-        %td
-        %td
+      = f.simple_fields_for :page_form_elements do |page_form_element_form|
+        = render 'page_form_element_fields', f: page_form_element_form
+
+  = link_to_add_association 'フォーム要素を追加', f, :page_form_elements, { data: {:'association-insertion-traversal' => 'prev',  :'association-insertion-node' => 'table',  :'association-insertion-method' => :append} }
 
 %fieldset
   %legend リンク

@@ -13,7 +13,7 @@
   %div.row
 
     %div.six.columns
-      = render 'form_images', :f => f
+      = render 'form_images', f: f
 
     %div.six.columns
       
@@ -27,7 +27,7 @@
             = link_to 'デザイン指示書', '#'
 
         %div.tab-content.active
-          = render 'form_system', :f => f
+          = render 'form_system', f: f
 
         %div.tab-content
-          = render 'form_design', :f => f
+          = render 'form_design', f: f
