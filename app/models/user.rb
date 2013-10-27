@@ -4,6 +4,6 @@ class User < ActiveRecord::Base
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
 
-  has_one :user_profile, dependent: :destroy
-  accepts_nested_attributes_for :user_profile 
+  has_one :profile, class_name: 'UserProfile', dependent: :destroy
+  accepts_nested_attributes_for :profile 
 end
