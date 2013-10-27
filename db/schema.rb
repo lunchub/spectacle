@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20131026063256) do
+ActiveRecord::Schema.define(version: 20131027082046) do
 
   create_table "answers", force: true do |t|
     t.text     "comment"
@@ -150,7 +150,7 @@ ActiveRecord::Schema.define(version: 20131026063256) do
   end
 
   create_table "site_preconditions", force: true do |t|
-    t.string   "title"
+    t.string   "name"
     t.integer  "page_id"
     t.datetime "created_at"
     t.datetime "updated_at"

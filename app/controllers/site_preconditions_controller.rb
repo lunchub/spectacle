@@ -69,6 +69,6 @@ class SitePreconditionsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def site_precondition_params
-      params.require(:site_precondition).permit(:title, :page_id)
+      params.require(:site_precondition).permit(:name, :page_id)
     end
 end

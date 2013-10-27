@@ -1,1 +1,1 @@
-json.extract! @site_precondition, :title, :page_id, :created_at, :updated_at
+json.extract! @site_precondition, :name, :page_id, :created_at, :updated_at

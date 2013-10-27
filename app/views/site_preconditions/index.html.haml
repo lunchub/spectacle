@@ -6,7 +6,7 @@
   %table.striped
     %thead
       %tr
-        %th Title
+        %th Name
         %th
 
     %tbody
@@ -14,7 +14,7 @@
       %tr
         %td
           = link_to site_precondition, class: 'valign' do
-            = site_precondition.title
+            = site_precondition.name
         %td
           %div.primary.small.btn
             = link_to 'Edit', edit_site_precondition_path(site_precondition)
