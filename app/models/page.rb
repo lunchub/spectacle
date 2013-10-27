@@ -39,6 +39,10 @@ class Page < ActiveRecord::Base
   has_many :site_preconditions, through: :page_site_preconditions
   accepts_nested_attributes_for :page_site_preconditions, reject_if: :all_blank, allow_destroy: true
 
+  has_many :page_validations
+  has_many :validations, through: :page_validations
+  accepts_nested_attributes_for :page_validations, reject_if: :all_blank, allow_destroy: true
+
   # 自己参照 N:N
   # has_many :from_page_link_relations, foreign_key: 'from_page_id', class_name: 'PageLink'
   # has_many :to_page_link_relations, foreign_key: 'to_page_id', class_name: 'PageLink'
