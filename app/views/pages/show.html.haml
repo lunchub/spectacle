@@ -17,84 +17,125 @@
 
   %div.six.columns
 
+    %fieldset
+      %legend 基本情報
+      
+      %h4 ページ名
+      = @page.title
 
-    %h3 基本情報
+      %h4 URL
+      = @page.url
 
-    %table.striped
-      %thead
-        %tr
-          %th ページ名称
-          %th URL
-          %th オプション
-          %th メール配信
-      %tbody
-        %tr
-          %td
-          %td
-          %td
-          %td
+      - if @page.page_goals.present?
+        %h4 ページ目標
+        %ul
+          - @page.page_goals.each do |page_goal|
+            %li
+              = page_goal.title
 
-    %h4 ページ目標
-    %ul
-      %li
+      - if @page.site_options.present?
+        %h4 オプション
+        %ul
+          - @page.site_options.each do |site_option|
+            %li
+              = site_option.name
 
-    %h4 オプション詳細
-    %ul
-      %li
-
-    %h4 メール配信詳細
-    %ul
-      %li
-
-
-    %h3 前提条件
-    %ul
-      %li
-
-    %h3 仕様
-    %ul
-      %li
-
-    %h4 画面上の挙動
-    %ul
-      %li
-
-    %h4 フォームとバリデーション
-    
-    %table
-      %thead
-        %tr
-          %th 表示上の名目
-          %th システム上の名目
-          %th フォーム部品の種別
-          %th バリデーション内容
-      %tbody
-        %tr
-          %td
-          %td
-          %td
-          %td
+      - if @page.mail_deliveries.present?
+        %h4 メール配信
+        %ul
+          - @page.mail_deliveries.each do |mail_delivery|
+            %li
+              = mail_delivery.name
 
 
-    %h3 遷移
+    - if @page.site_preconditions.present?
+      %fieldset
+        %legend 前提条件
 
-    %table
-      %thead
-        %tr
-          %th 表示要素
-          %th 遷移先ページ
-          %th URL
-      %tbody
-        %tr
-          %td
-          %td
-          %td
+        %ul
+          - @page.site_preconditions.each do |site_precondition|
+            %li
+              = site_precondition.name
 
 
-    %h3 業態間における備考
+    %fieldset
+      %legend 仕様
+
+      - if @page.page_specs.present?
+        %h4 仕様
+        %ul
+          - @page.page_specs.each do |page_spec|
+            %li
+              = page_spec.title
+
+      - if @page.page_actions.present?
+        %h4 画面上の挙動
+        %ul
+          - @page.page_actions.each do |page_action|
+            %li
+              = page_action.title
 
 
-    %h3 WEB版との比較事項
+      %h4 業態間の比較事項
+
+      %h4 デバイス間の比較事項
 
 
-    %h3 疑問点
+    - if @page.page_form_elements.present?
+      %fieldset
+        %legend フォーム
+
+        %table.striped
+          %thead
+            %tr
+              %th 表示要素
+              %th フォーム部品の種別
+              %th バリデーション内容
+          %tbody
+            - @page.page_form_elements.each do |page_form_element|
+              %tr.nested-fields.field
+                %td
+                  = page_form_element.element_name
+                %td
+                  = page_form_element.input_type
+                %td
+                  - if page_form_element.validation.present?
+                    = page_form_element.validation.name
+
+
+    - if @page.page_links.present?
+      %fieldset
+        %legend リンク
+
+        %table.striped
+          %thead
+            %tr
+              %th 表示要素
+              %th リンク先ページ
+          %tbody
+            - @page.page_links.each do |page_link|
+              %tr.field
+                %td
+                  = page_link.element_name
+                %td
+                  = link_to page_path page_link.to_page_id do
+                    = page_link.to_page.title
+
+
+
+    - if @page.questions.present?
+      %fieldset
+        %legend FAQ
+        %ul
+          - @page.questions.each do |question|
+            %li
+              %h5
+                = question.title
+              %fieldset
+                - if question.answers.present?
+                  %ul
+                    - question.answers.each do |answer|
+                      %li
+                        = answer.comment
+                - else
+                  = link_to '未回答', edit_page_path
