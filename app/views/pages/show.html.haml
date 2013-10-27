@@ -8,6 +8,8 @@
   %h2.twelve.columns
     %div.default.xlarge.btn
       = link_to 'List', pages_path
+    %div.info.xlarge.btn
+      = link_to 'History', '#'
     %div.primary.xlarge.btn.pull_right
       = link_to 'Edit', edit_page_path
 
@@ -33,15 +35,21 @@
             %li
               = page_goal.title
 
-      - if @page.site_options.present?
-        %h4 オプション
+
+    - if @page.site_options.present?
+      %fieldset
+        %legend オプション
+
         %ul
           - @page.site_options.each do |site_option|
             %li
               = site_option.name
 
-      - if @page.mail_deliveries.present?
-        %h4 メール配信
+
+    - if @page.mail_deliveries.present?
+      %fieldset
+        %legend メール配信
+
         %ul
           - @page.mail_deliveries.each do |mail_delivery|
             %li
@@ -58,27 +66,32 @@
               = site_precondition.name
 
 
-    %fieldset
-      %legend 仕様
+    - if @page.page_specs.present?
+      %fieldset
+        %legend 仕様
 
-      - if @page.page_specs.present?
-        %h4 仕様
         %ul
           - @page.page_specs.each do |page_spec|
             %li
               = page_spec.title
 
-      - if @page.page_actions.present?
-        %h4 画面上の挙動
+
+    - if @page.page_actions.present?
+      %fieldset
+        %legend 画面上の挙動
+
         %ul
           - @page.page_actions.each do |page_action|
             %li
               = page_action.title
 
 
-      %h4 業態間の比較事項
+    -# %fieldset
+    -#   %legend 業態間の比較事項
 
-      %h4 デバイス間の比較事項
+
+    -# %fieldset
+    -#   %legend デバイス間の比較事項
 
 
     - if @page.page_form_elements.present?

@@ -18,7 +18,7 @@
     
 
 %fieldset
-  %legend 基本情報
+  %legend オプション
 
   %ul
     = f.simple_fields_for :page_site_options do |page_site_option_form|
@@ -50,14 +50,15 @@
 %fieldset
   %legend 仕様
 
-  %h5 仕様
   %ul
     = f.simple_fields_for :page_specs do |page_spec_form|
       = render 'page_spec_fields', f: page_spec_form
     %li
       = link_to_add_association '仕様を追加', f, :page_specs
 
-  %h5 画面上の挙動
+%fieldset
+  %legend 画面上の挙動
+
   %ul
     = f.simple_fields_for :page_actions do |page_action_form|
       = render 'page_action_fields', f: page_action_form
@@ -65,9 +66,11 @@
       = link_to_add_association '画面上の挙動を追加', f, :page_actions
 
 
-  %h5 業態間の比較事項
+%fieldset
+  %legend 業態間の比較事項
 
-  %h5 デバイス間の比較事項
+%fieldset
+  %legend デバイス間の比較事項
 
 
 %fieldset
