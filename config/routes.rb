@@ -1,4 +1,6 @@
 Spectacle::Application.routes.draw do
+  resources :validations
+
   resource :profile, except: [:index, :create, :destroy], as: :profile
   match '/profile' => 'profiles#create', via: :post
 
