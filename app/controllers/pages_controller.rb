@@ -93,6 +93,13 @@ class PagesController < ApplicationController
           :to_page_id, 
           :_destroy, 
         ], 
+        page_form_elements_attributes: [
+          :id, 
+          :element_name, 
+          :input_type, 
+          :validation_id, 
+          :_destroy, 
+        ], 
         questions_attributes: [
           :id, 
           :title, 
