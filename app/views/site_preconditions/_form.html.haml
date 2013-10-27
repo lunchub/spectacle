@@ -11,13 +11,7 @@
 
   %div.row
 
-    %h2.twelve.columns
-      %div.warning.xlarge.btn
-        = link_to 'Cancel', site_preconditions_path
-      %div.info.xlarge.btn
-        = link_to 'Show', site_precondition_path
-      %div.primary.xlarge.btn.pull_right
-        = f.submit 'UPDATE'
+    = render 'menu', f: f
 
   %div.row
 

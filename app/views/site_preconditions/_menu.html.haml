@@ -1,0 +1,13 @@
+%h2.twelve.columns
+  %div.warning.xlarge.btn
+    = link_to 'Cancel', site_preconditions_path
+
+  - if @site_precondition.persisted?
+    %div.info.xlarge.btn
+      = link_to 'Show', site_precondition_path
+    %div.primary.xlarge.btn.pull_right
+      = f.submit 'UPDATE'
+
+  - if @site_precondition.new_record?
+    %div.primary.xlarge.btn.pull_right
+      = f.submit 'Save'
