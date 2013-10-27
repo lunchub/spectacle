@@ -57,13 +57,18 @@
     %li
       = link_to_add_association '画面上の挙動を追加', f, :page_actions
 
-  %h4 フォームとバリデーション
+
+  %h4 業態間の比較事項
+
+  %h4 デバイス間の比較事項
+
+%fieldset
+  %legend フォーム
 
   %table.striped
     %thead
       %tr
         %th 表示上の名目
-        %th システム上の名目
         %th フォーム部品の種別
         %th バリデーション内容
     %tbody
@@ -71,8 +76,6 @@
         %td
         %td
         %td
-        %td
-
 
 %fieldset
   %legend リンク
@@ -89,16 +92,9 @@
 
   = link_to_add_association 'リンクを追加', f, :page_links, { data: {:'association-insertion-traversal' => 'prev',  :'association-insertion-node' => 'table',  :'association-insertion-method' => :append} }
 
-%fieldset
-  %legend 業態間における備考
-
 
 %fieldset
-  %legend WEB版との比較事項
-
-
-%fieldset
-  %legend 疑問点
+  %legend FAQ
   %ul
     = f.simple_fields_for :questions do |question_form|
       = render 'question_fields', f: question_form
