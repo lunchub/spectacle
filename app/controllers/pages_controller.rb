@@ -118,25 +118,26 @@ class PagesController < ApplicationController
         ], 
         page_site_preconditions_attributes: [
           :id, 
-          :page_id, 
           :site_precondition_id, 
           :_destroy, 
         ], 
+        page_connected_pages_attributes: [
+          :id, 
+          :connected_page_id, 
+          :_destroy, 
+        ],
         page_site_options_attributes: [
           :id, 
-          :page_id, 
           :site_option_id, 
           :_destroy, 
         ],
         page_mail_deliveries_attributes: [
           :id, 
-          :page_id, 
           :mail_delivery_id, 
           :_destroy, 
         ],
         page_validations_attributes: [
           :id, 
-          :page_id, 
           :validation_id, 
           :_destroy, 
         ],
