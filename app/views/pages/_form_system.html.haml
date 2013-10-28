@@ -28,6 +28,16 @@
 
 
 %fieldset
+  %legend 関連ページ
+
+  %ul
+    = f.simple_fields_for :page_connected_pages do |page_connected_page_form|
+      = render 'page_connected_page_fields', f: page_connected_page_form
+    %li
+      = link_to_add_association '関連するページを追加', f, :page_connected_pages
+
+
+%fieldset
   %legend メール配信
 
   %ul

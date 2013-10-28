@@ -46,6 +46,17 @@
               = site_option.name
 
 
+    - if @page.connected_pages.present?
+      %fieldset
+        %legend 関連ページ
+
+        %ul
+          - @page.connected_pages.each do |connected_page|
+            %li
+              = link_to page_path connected_page.id do
+                = connected_page.title
+
+
     - if @page.mail_deliveries.present?
       %fieldset
         %legend メール配信
