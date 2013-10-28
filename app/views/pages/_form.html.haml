@@ -12,17 +12,19 @@
 
   %div.row
 
-    %div.two.columns
-      = render 'form_images', f: f
-
-    %div.ten.columns
+    %div.twelve.columns
       
       %section.tabs
         %ul.tab-nav
+          %li
+            = link_to 'イメージ', '#'
           %li.active
             = link_to '機能仕様書', '#'
           %li
             = link_to 'デザイン指示書', '#'
+
+        %div.tab-content
+          = render 'form_images', f: f
 
         %div.tab-content.active
           = render 'form_system', f: f

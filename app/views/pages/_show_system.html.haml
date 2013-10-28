@@ -1,0 +1,167 @@
+%fieldset
+  %legend 基本情報
+  
+  %h4 ページ名
+  = @page.title
+
+  %h4 URL
+  = @page.url
+
+  - if @page.page_goals.present?
+    %h4 ページ目標
+    %ul
+      - @page.page_goals.each do |page_goal|
+        %li
+          = page_goal.title
+
+
+- if @page.site_options.present?
+  %fieldset
+    %legend オプション
+
+    %ul
+      - @page.site_options.each do |site_option|
+        %li
+          = site_option.name
+
+
+- if @page.connected_pages.present?
+  %fieldset
+    %legend 関連ページ
+
+    %ul
+      - @page.connected_pages.each do |connected_page|
+        %li
+          = link_to page_path connected_page.id do
+            = connected_page.title
+
+
+- if @page.mail_deliveries.present?
+  %fieldset
+    %legend メール配信
+
+    %ul
+      - @page.mail_deliveries.each do |mail_delivery|
+        %li
+          = mail_delivery.name
+
+
+- if @page.site_preconditions.present?
+  %fieldset
+    %legend 前提条件
+
+    %ul
+      - @page.site_preconditions.each do |site_precondition|
+        %li
+          = site_precondition.name
+
+
+- if @page.page_specs.present?
+  %fieldset
+    %legend 仕様
+
+    %ul
+      - @page.page_specs.each do |page_spec|
+        %li
+          = page_spec.title
+
+
+- if @page.page_actions.present?
+  %fieldset
+    %legend 画面上の挙動
+
+    %ul
+      - @page.page_actions.each do |page_action|
+        %li
+          = page_action.title
+
+
+-# %fieldset
+-#   %legend 業態間の比較事項
+
+
+-# %fieldset
+-#   %legend デバイス間の比較事項
+
+
+- if @page.page_form_elements.present? or @page.page_form_transfers.present?
+  %fieldset
+    %legend フォーム
+
+    - if @page.page_form_elements.present?
+      %h5 フィールド
+      %table.striped
+        %thead
+          %tr
+            %th 表示要素
+            %th フォームタイプ
+            %th{style: 'width:10%;'}  必須
+            %th{style: 'width:40%;'} バリデーション
+        %tbody
+          - @page.page_form_elements.each do |page_form_element|
+            %tr.nested-fields.field
+              %td
+                = page_form_element.element_name
+              %td
+                = page_form_element.input_type
+              %td
+                - if page_form_element.required
+                  %div.btn.danger.small
+                    %span 必須
+              %td
+                - if page_form_element.validation.present?
+                  = page_form_element.validation.name
+
+    - if @page.page_form_transfers.present?
+      %h5 遷移先
+      %table.striped
+        %thead
+          %tr
+            %th 表示要素
+            %th 遷移先
+        %tbody
+          - @page.page_form_transfers.each do |page_form_transfer|
+            %tr.nested-fields.field
+              %td
+                = page_form_transfer.element_name
+              %td
+                = link_to page_path page_form_transfer.to_page_id do
+                  = page_form_transfer.to_page.title
+
+
+- if @page.page_links.present?
+  %fieldset
+    %legend リンク
+
+    %table.striped
+      %thead
+        %tr
+          %th 表示要素
+          %th リンク先
+      %tbody
+        - @page.page_links.each do |page_link|
+          %tr.field
+            %td
+              = page_link.element_name
+            %td
+              = link_to page_path page_link.to_page_id do
+                = page_link.to_page.title
+
+
+
+- if @page.questions.present?
+  %fieldset
+    %legend FAQ
+    %ul
+      - @page.questions.each do |question|
+        %li
+          %h5
+            = question.title
+          %fieldset
+            - if question.answers.present?
+              %ul
+                - question.answers.each do |answer|
+                  %li
+                    = answer.comment
+            - else
+              = link_to '未回答', edit_page_path
