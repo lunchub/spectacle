@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20131028024423) do
+ActiveRecord::Schema.define(version: 20131028031841) do
 
   create_table "answers", force: true do |t|
     t.text     "comment"
@@ -56,6 +56,16 @@ ActiveRecord::Schema.define(version: 20131028024423) do
 
   add_index "page_form_elements", ["page_id"], name: "index_page_form_elements_on_page_id"
   add_index "page_form_elements", ["validation_id"], name: "index_page_form_elements_on_validation_id"
+
+  create_table "page_form_transfers", force: true do |t|
+    t.string   "element_name"
+    t.integer  "page_id"
+    t.integer  "to_page_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "page_form_transfers", ["page_id"], name: "index_page_form_transfers_on_page_id"
 
   create_table "page_goals", force: true do |t|
     t.string   "title"
