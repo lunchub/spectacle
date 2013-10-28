@@ -98,8 +98,8 @@
       %fieldset
         %legend フォーム
 
-        %h5 フィールド
         - if @page.page_form_elements.present?
+          %h5 フィールド
           %table.striped
             %thead
               %tr
@@ -122,8 +122,8 @@
                     - if page_form_element.validation.present?
                       = page_form_element.validation.name
 
-        %h5 遷移先
         - if @page.page_form_transfers.present?
+          %h5 遷移先
           %table.striped
             %thead
               %tr
