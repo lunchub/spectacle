@@ -94,31 +94,50 @@
     -#   %legend デバイス間の比較事項
 
 
-    - if @page.page_form_elements.present?
+    - if @page.page_form_elements.present? or @page.page_form_transfers.present?
       %fieldset
         %legend フォーム
 
-        %table.striped
-          %thead
-            %tr
-              %th 表示要素
-              %th フォームタイプ
-              %th{style: 'width:10%;'}  必須
-              %th{style: 'width:40%;'} バリデーション
-          %tbody
-            - @page.page_form_elements.each do |page_form_element|
-              %tr.nested-fields.field
-                %td
-                  = page_form_element.element_name
-                %td
-                  = page_form_element.input_type
-                %td
-                  - if page_form_element.required
-                    %div.btn.danger.small
-                      %span 必須
-                %td
-                  - if page_form_element.validation.present?
-                    = page_form_element.validation.name
+        %ul{style: 'list-style: none;'}
+          - if @page.page_form_elements.present?
+            %li
+              %table.striped
+                %thead
+                  %tr
+                    %th 表示要素
+                    %th フォームタイプ
+                    %th{style: 'width:10%;'}  必須
+                    %th{style: 'width:40%;'} バリデーション
+                %tbody
+                  - @page.page_form_elements.each do |page_form_element|
+                    %tr.nested-fields.field
+                      %td
+                        = page_form_element.element_name
+                      %td
+                        = page_form_element.input_type
+                      %td
+                        - if page_form_element.required
+                          %div.btn.danger.small
+                            %span 必須
+                      %td
+                        - if page_form_element.validation.present?
+                          = page_form_element.validation.name
+
+          - if @page.page_form_transfers.present?
+            %li
+              %table.striped
+                %thead
+                  %tr
+                    %th 表示要素
+                    %th 遷移先
+                %tbody
+                  - @page.page_form_transfers.each do |page_form_transfer|
+                    %tr.nested-fields.field
+                      %td
+                        = page_form_transfer.element_name
+                      %td
+                        = link_to page_path page_form_transfer.to_page_id do
+                          = page_form_transfer.to_page.title
 
 
     - if @page.page_links.present?

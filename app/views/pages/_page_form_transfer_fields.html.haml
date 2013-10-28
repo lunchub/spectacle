@@ -1,0 +1,8 @@
+%tr.field
+  %td
+    = f.input_field :element_name, class: 'input'
+  %td
+    = f.input_field :to_page_id, collection: Page.where.not( id: f.object.page.try(:id) ), class: 'input'
+  %td
+    %div.danger.btn.small
+      = link_to_remove_association "削除", f
