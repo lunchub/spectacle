@@ -101,6 +101,12 @@ class PagesController < ApplicationController
           :validation_id, 
           :_destroy, 
         ], 
+        page_form_transfers_attributes: [
+          :id, 
+          :element_name, 
+          :to_page_id, 
+          :_destroy, 
+        ], 
         questions_attributes: [
           :id, 
           :title, 
