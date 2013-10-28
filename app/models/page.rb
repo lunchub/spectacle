@@ -33,6 +33,10 @@ class Page < ActiveRecord::Base
   accepts_nested_attributes_for :page_images, reject_if: :all_blank, allow_destroy: true
 
   # N:M (through)
+  has_many :page_connected_pages
+  has_many :connected_pages, through: :page_connected_pages
+  accepts_nested_attributes_for :page_connected_pages, reject_if: :all_blank, allow_destroy: true
+
   has_many :page_site_options
   has_many :site_options, through: :page_site_options
   accepts_nested_attributes_for :page_site_options, reject_if: :all_blank, allow_destroy: true
