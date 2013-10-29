@@ -30,6 +30,15 @@
 %fieldset
   %legend 関連ページ
 
+  - if @page.inverse_connected_pages.present?
+    %fieldset
+      %legend 関連付けられているページ
+      %ul
+        - @page.inverse_connected_pages.each do |inverse_connected_page|
+          %li
+            = link_to page_path inverse_connected_page.id do
+              = inverse_connected_page.title
+
   %ul
     = f.simple_fields_for :page_connected_pages do |page_connected_page_form|
       = render 'page_connected_page_fields', f: page_connected_page_form

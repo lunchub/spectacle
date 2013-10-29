@@ -25,9 +25,18 @@
           = site_option.name
 
 
-- if @page.connected_pages.present?
+- if @page.connected_pages.present? or @page.inverse_connected_pages.present?
   %fieldset
     %legend 関連ページ
+
+    - if @page.inverse_connected_pages.present?
+      %fieldset
+        %legend 関連付けられているページ
+        %ul
+          - @page.inverse_connected_pages.each do |inverse_connected_page|
+            %li
+              = link_to page_path inverse_connected_page.id do
+                = inverse_connected_page.title
 
     %ul
       - @page.connected_pages.each do |connected_page|

@@ -37,6 +37,10 @@ class Page < ActiveRecord::Base
   has_many :connected_pages, through: :page_connected_pages
   accepts_nested_attributes_for :page_connected_pages, reject_if: :all_blank, allow_destroy: true
 
+  has_many :inverse_page_connected_pages, class_name: 'PageConnectedPage', foreign_key: 'connected_page_id'
+  has_many :inverse_connected_pages, through: :inverse_page_connected_pages, source: :page
+  accepts_nested_attributes_for :page_connected_pages, reject_if: :all_blank, allow_destroy: true
+
   has_many :page_site_options
   has_many :site_options, through: :page_site_options
   accepts_nested_attributes_for :page_site_options, reject_if: :all_blank, allow_destroy: true
