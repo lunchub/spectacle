@@ -27,3 +27,8 @@ Gumby.init();
 Gumby.init({
   uiModules: ['tabs']
 });
+
+$('ul.tab-nav').on('click', 'a', function (e) {
+  e.preventDefault();
+  e.stopPropergation();
+});
