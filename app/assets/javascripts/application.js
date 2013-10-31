@@ -20,15 +20,17 @@
 //= require gumby/libs/ui/gumby.tabs
 //= require gumby/libs/ui/gumby.checkbox
 
-// initialize Gumby and all included UI modules
-Gumby.init();
+$(document).on('page:load', function() {
+  // initialize Gumby and all included UI modules
+  Gumby.init();
 
-// initialize Gumby with only the specified UI modules
-Gumby.init({
-  uiModules: ['tabs']
-});
+  // initialize Gumby with only the specified UI modules
+  Gumby.init({
+    uiModules: ['tabs']
+  });
 
-$('ul.tab-nav').on('click', 'a', function (e) {
-  e.preventDefault();
-  e.stopPropergation();
+  $('ul.tab-nav').on('click', 'a', function (e) {
+    e.preventDefault();
+    // e.stopPropergation();
+  });
 });
