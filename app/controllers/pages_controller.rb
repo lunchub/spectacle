@@ -110,6 +110,7 @@ class PagesController < ApplicationController
         questions_attributes: [
           :id, 
           :title, 
+          :status, 
           :_destroy,
           question_comments_attributes: [
             :id, 
