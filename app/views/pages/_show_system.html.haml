@@ -164,7 +164,7 @@
     %ul
       - @page.questions.each do |question|
         %li
-          %h5
+          %h5{id: "question-#{question.id}"}
             = question.title
           %fieldset
             - if question.question_comments.present?

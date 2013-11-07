@@ -1,6 +1,6 @@
 %li.field.nested-fields
   %fieldset
-    %h5 質問 
+    %h5{id: "question-#{f.object.id}"} 質問 
     = f.text_area :title, class: 'input textarea'
     = f.input_field :status, collection: Question.status.options, include_blank: false, class: 'input '
     -# %div.danger.btn.large
