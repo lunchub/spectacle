@@ -6,4 +6,6 @@ class Question < ActiveRecord::Base
 
   extend Enumerize
   enumerize :status, in: [:not_solved, :solved]
+
+  scope :not_solved, -> { where(status: :not_solved) }
 end
