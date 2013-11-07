@@ -1,0 +1,6 @@
+ja:
+  enumerize:
+    question:
+      status:
+        not_solved: '未解決'
+        solved: '解決済'
