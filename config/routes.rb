@@ -17,8 +17,6 @@ Spectacle::Application.routes.draw do
 
   resources :page_images
 
-  resources :answers
-
   resources :page_specs
 
   resources :page_goals
