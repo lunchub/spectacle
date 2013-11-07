@@ -62,6 +62,9 @@ gem 'rails-observers'
 # authentication
 gem 'devise'
 
+# enum
+gem 'enumerize'
+
 # quiet_assets
 group :development, :test do
   gem 'quiet_assets'
