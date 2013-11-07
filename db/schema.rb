@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20131107032733) do
+ActiveRecord::Schema.define(version: 20131107033255) do
 
   create_table "flowcharts", force: true do |t|
     t.datetime "created_at"
@@ -174,6 +174,7 @@ ActiveRecord::Schema.define(version: 20131107032733) do
     t.datetime "updated_at"
     t.integer  "questionable_id"
     t.string   "questionable_type"
+    t.string   "status"
   end
 
   create_table "scenarios", force: true do |t|
