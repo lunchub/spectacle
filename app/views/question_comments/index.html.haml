@@ -1,0 +1,23 @@
+%h1 Listing question_comments
+
+%table
+  %tr
+    %th Comment
+    %th Question
+    %th User
+    %th
+    %th
+    %th
+
+  - @question_comments.each do |question_comment|
+    %tr
+      %td= question_comment.comment
+      %td= question_comment.question
+      %td= question_comment.user
+      %td= link_to 'Show', question_comment
+      %td= link_to 'Edit', edit_question_comment_path(question_comment)
+      %td= link_to 'Destroy', question_comment, :method => :delete, :data => { :confirm => 'Are you sure?' }
+
+%br
+
+= link_to 'New Question comment', new_question_comment_path

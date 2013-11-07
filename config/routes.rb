@@ -1,4 +1,6 @@
 Spectacle::Application.routes.draw do
+  resources :question_comments
+
   resources :validations
 
   resource :profile, except: [:index, :create, :destroy], as: :profile

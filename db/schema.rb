@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20131107031135) do
+ActiveRecord::Schema.define(version: 20131107032733) do
 
   create_table "flowcharts", force: true do |t|
     t.datetime "created_at"
@@ -156,6 +156,17 @@ ActiveRecord::Schema.define(version: 20131107031135) do
     t.datetime "created_at"
     t.datetime "updated_at"
   end
+
+  create_table "question_comments", force: true do |t|
+    t.text     "comment"
+    t.integer  "question_id"
+    t.integer  "user_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "question_comments", ["question_id"], name: "index_question_comments_on_question_id"
+  add_index "question_comments", ["user_id"], name: "index_question_comments_on_user_id"
 
   create_table "questions", force: true do |t|
     t.string   "title"
