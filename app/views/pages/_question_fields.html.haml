@@ -7,7 +7,7 @@
 
     %h5 回答
     %ul
-      = f.simple_fields_for :answers do |answer_form|
-        = render 'answer_fields', f: answer_form
+      = f.simple_fields_for :question_comments do |question_comment_form|
+        = render 'question_comment_fields', f: question_comment_form
       %li
-        = link_to_add_association '回答を追加', f, :answers
+        = link_to_add_association '回答を追加', f, :question_comments

@@ -167,10 +167,10 @@
           %h5
             = question.title
           %fieldset
-            - if question.answers.present?
+            - if question.question_comments.present?
               %ul
-                - question.answers.each do |answer|
+                - question.question_comments.each do |question_comment|
                   %li
-                    = answer.comment
+                    = question_comment.comment
             - else
               = link_to '未回答', edit_page_path

@@ -111,8 +111,9 @@ class PagesController < ApplicationController
           :id, 
           :title, 
           :_destroy,
-          answers_attributes: [
+          question_comments_attributes: [
             :id, 
+            :user_id, 
             :comment, 
           ], 
         ], 
