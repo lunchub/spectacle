@@ -13,11 +13,14 @@
             %tr
               %th ページ
               %th 質問内容
+              %th 
           %tbody
-          - @questions.each do |question|
+          - @questions.not_solved.each do |question|
             %tr
               %td
                 = link_to page_path question.questionable.id do
                   = question.questionable.title
               %td
                 = question.title
+              %td
+                = link_to '回答する', edit_page_path(question.questionable.id, anchor: "question-#{question.id}")
